@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Header from "../../common/Header/index.jsx";
 import DisplayEmpty from "../../common/DisplayEmpty/index.jsx";
 import TableRow from "../../common/TableRow/index.jsx";
-
 const Favourite = () => {
   const [changeFav, setChangeFav] = useState(true);
   useEffect(() => {}, [changeFav]);
