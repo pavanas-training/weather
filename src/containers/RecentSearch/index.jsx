@@ -3,6 +3,7 @@ import styled from "styled-components";
 import DisplayEmpty from "../../common/DisplayEmpty/index.jsx";
 import Header from "../../common/Header/index.jsx";
 import TableRow from "../../common/TableRow/index.jsx";
+import RemoveButton from "../../common/RemoveButton/index.jsx";
 const RecentSearch = () => {
   const [changeFav, setChangeFav] = useState(true);
   useEffect(() => {}, [changeFav]);
@@ -10,6 +11,14 @@ const RecentSearch = () => {
   return (
     <RecentSearchContainer>
       <Header />
+      {recent.length !== 0 && (
+        <RemoveButton
+          msg="You recently searched for"
+          btn_name="Clear all"
+          setChangeFav={setChangeFav}
+          changeFav={changeFav}
+        ></RemoveButton>
+      )}
       {recent !== [] &&
         recent.map((data, index) => {
           return (

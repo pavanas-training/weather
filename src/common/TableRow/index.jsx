@@ -10,11 +10,6 @@ const TableRow = ({
   changeFav,
   data,
 }) => {
-  /*const handleFav = (id) => {
-    arr.push(id);
-    localStorage.setItem("Favourite", JSON.stringify(arr));
-    setFavState(!favState);
-  };*/
   const [favState, setFavState] = useState(likeStatus);
   const handleFav = () => {
     var arr = JSON.parse(localStorage.getItem("Favourite"));
@@ -43,7 +38,7 @@ const TableRow = ({
       <Button>
         <Like
           src={
-            favState
+            favState || !data
               ? `/assets/icons/icon_liked.svg`
               : `/assets/icons/icon_not_liked.png`
           }
@@ -61,6 +56,9 @@ const RowContainer = styled.div`
   display: flex;
   flex-direction: row;
   padding: 1.5% 2% 2% 2%;
+  :hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
 `;
 const Location = styled.h1`
   color: #ffffff;
