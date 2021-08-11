@@ -1,16 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-const RemoveButton = ({ msg, btn_name, setChangeFav, changeFav }) => {
-  const arr = [];
+const RemoveButton = ({ msg, setAlertStatus, btn_name }) => {
   const handleClear = () => {
-    if (btn_name === "Clear all") {
-      localStorage.setItem("RecentSearch", JSON.stringify(arr));
-      localStorage.setItem("RecentLocations", JSON.stringify(arr));
-    } else {
-      localStorage.setItem("Favourite", JSON.stringify(arr));
-      localStorage.setItem("FavLocations", JSON.stringify(arr));
-    }
-    setChangeFav(!changeFav);
+    setAlertStatus(true);
   };
   return (
     <Container>

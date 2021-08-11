@@ -161,6 +161,7 @@ const HomeContainer = styled.div`
   height: 100%;
   .active {
     background-color: #ffffff;
+    color: #e32843;
   }
   .inactive {
     background-color: transparent;
