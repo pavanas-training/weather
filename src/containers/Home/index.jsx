@@ -11,11 +11,23 @@ const Home = () => {
   const [FState, setFState] = useState(false);
   const [CState, setCState] = useState(true);
   const [favState, setFavState] = useState(false);
+
   const handleFav = () => {
     var arr = JSON.parse(localStorage.getItem("Favourite"));
-    arr.push(data);
+    var arr2 = JSON.parse(localStorage.getItem("FavLocations"));
+    if (arr2.includes(data.name)) {
+      const idx = arr2.indexOf(data.name);
+      arr2.splice(idx, 1);
+      arr.splice(idx, 1);
+    } else {
+      arr.push(data);
+      arr2.push(data.name);
+    }
+    localStorage.setItem("FavLocations", JSON.stringify(arr2));
     localStorage.setItem("Favourite", JSON.stringify(arr));
-    setFavState(!favState);
+    setFavState(
+      JSON.parse(localStorage.getItem("FavLocations")).includes(data.name)
+    );
   };
   const handleSearch = async (city) => {
     setData(null);
@@ -52,6 +64,9 @@ const Home = () => {
       arr = JSON.parse(localStorage.getItem("RecentSearch"));
       arr.push(data1);
       localStorage.setItem("RecentSearch", JSON.stringify(arr));
+      setFavState(
+        JSON.parse(localStorage.getItem("FavLocations")).includes(data1.name)
+      );
     }
   };
   useEffect(() => {
@@ -59,6 +74,9 @@ const Home = () => {
       var data2;
       data2 = await getCurrentLocationData();
       setData(data2);
+      setFavState(
+        JSON.parse(localStorage.getItem("FavLocations")).includes(data2.name)
+      );
       if (data2 !== null) {
         updateFooter(data2);
       }

@@ -1,19 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-const TableRow = ({ location, src, temp, weather, likeStatus }) => {
+const TableRow = ({
+  location,
+  src,
+  temp,
+  weather,
+  likeStatus,
+  setChangeFav,
+  changeFav,
+}) => {
   /*const handleFav = (id) => {
     arr.push(id);
     localStorage.setItem("Favourite", JSON.stringify(arr));
     setFavState(!favState);
   };*/
+  const [favState, setFavState] = useState(likeStatus);
+  const handleFav = () => {
+    var arr = JSON.parse(localStorage.getItem("Favourite"));
+    var arr2 = JSON.parse(localStorage.getItem("FavLocations"));
+    if (arr2.includes(location)) {
+      const idx = arr2.indexOf(location);
+      arr2.splice(idx, 1);
+      arr.splice(idx, 1);
+    } else {
+      arr2.push(location);
+    }
+    localStorage.setItem("FavLocations", JSON.stringify(arr2));
+    localStorage.setItem("Favourite", JSON.stringify(arr));
+    setFavState(
+      JSON.parse(localStorage.getItem("FavLocations")).includes(location)
+    );
+    setChangeFav(!changeFav);
+  };
   return (
     <RowContainer>
       <Location>{location}</Location>
       <Icon src={src} alt="icon" />
       <Temp>{`${temp}${"\u00b0"}c`}</Temp>
       <Weather>{weather}</Weather>
-      <Button disabled={true}>
-        <Like src={likeStatus}></Like>
+      <Button>
+        <Like
+          src={
+            favState
+              ? `/assets/icons/icon_liked.svg`
+              : `/assets/icons/icon_not_liked.png`
+          }
+          onClick={handleFav}
+        ></Like>
       </Button>
     </RowContainer>
   );
@@ -34,7 +67,7 @@ const Location = styled.h1`
   font-weight: 500;
   letter-spacing: 0;
   margin-right: 20%;
-  width: 10%;
+  width: 20%;
   text-align: left;
 `;
 const Icon = styled.img`
