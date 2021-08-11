@@ -4,7 +4,9 @@ import styled from 'styled-components';
 import background_image from "./assets/images/background.svg";
 function App() {
 var arr=[];
+localStorage.getItem('RecentLocations');
 localStorage.getItem('FavLocations');
+localStorage.setItem('RecentLocations',JSON.stringify(arr));
 localStorage.setItem('FavLocations',JSON.stringify(arr));
 localStorage.getItem('RecentSearch');
 localStorage.getItem('Favourite');

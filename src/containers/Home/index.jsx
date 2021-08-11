@@ -56,13 +56,17 @@ const Home = () => {
     ]);
   };
   const callgetData = async (city) => {
-    var data1, arr;
+    var data1, arr, arr2;
     data1 = await getData(city);
     setData(data1);
     if (data1 !== []) {
       updateFooter(data1);
       arr = JSON.parse(localStorage.getItem("RecentSearch"));
-      arr.push(data1);
+      arr2 = JSON.parse(localStorage.getItem("RecentLocations"));
+      if (!arr2.includes(data1.name)) {
+        arr.push(data1);
+        arr2.push(data1.location);
+      }
       localStorage.setItem("RecentSearch", JSON.stringify(arr));
       setFavState(
         JSON.parse(localStorage.getItem("FavLocations")).includes(data1.name)

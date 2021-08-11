@@ -8,6 +8,7 @@ const TableRow = ({
   likeStatus,
   setChangeFav,
   changeFav,
+  data,
 }) => {
   /*const handleFav = (id) => {
     arr.push(id);
@@ -24,6 +25,7 @@ const TableRow = ({
       arr.splice(idx, 1);
     } else {
       arr2.push(location);
+      arr.push(data);
     }
     localStorage.setItem("FavLocations", JSON.stringify(arr2));
     localStorage.setItem("Favourite", JSON.stringify(arr));
