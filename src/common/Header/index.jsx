@@ -44,7 +44,8 @@ const Header = ({ handleSearch }) => {
           );
         })}
         <StyledToday>
-          {moment().format("ddd , DD MMM YYYY , h:mm A")}
+          {moment().format("ddd, DD MMM YYYY")}
+          {moment().format(" h:mm A")}
         </StyledToday>
       </NavbarContainer>
     </Wrapper>
@@ -118,6 +119,8 @@ const StyledToday = styled.h1`
   font-family: "Roboto", sans-serif;
   font-size: 15px;
   margin: 3% 0% 0% auto;
+  font-weight: normal;
+  font-style: thin;
 `;
 
 export default Header;

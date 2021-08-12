@@ -63,7 +63,7 @@ const Home = () => {
       updateFooter(data1);
       arr = JSON.parse(localStorage.getItem("RecentSearch"));
       arr2 = JSON.parse(localStorage.getItem("RecentLocations"));
-      if (!arr2.includes(data1.name)) {
+      if (!arr2.includes(data1.name) && data1.name !== "udupi") {
         arr.push(data1);
         arr2.push(data1.name);
       }
@@ -121,14 +121,14 @@ const Home = () => {
                   ? Math.trunc(data.main.temp)
                   : Math.trunc((data.main.temp * 9) / 5 + 32)}
               </TempValue>
-              <Fahrenheit
-                className={CState ? "inactive" : "active"}
-                onClick={handleChangeUnitToF}
-              >{`${"\u00b0"}F`}</Fahrenheit>
               <Celsius
                 className={FState ? "inactive" : "active"}
                 onClick={handleChangeUnitToC}
               >{`${"\u00b0"}C`}</Celsius>
+              <Fahrenheit
+                className={CState ? "inactive" : "active"}
+                onClick={handleChangeUnitToF}
+              >{`${"\u00b0"}F`}</Fahrenheit>
             </Temperature>
           )}
           <Description>
@@ -209,7 +209,7 @@ const AddedToFav = styled.h1`
 `;
 const Like = styled.img`
   height: 70%;
-  width: 5%;
+  width: 4%;
   margin: 1.5% 2% 0% -1.5%; ;
 `;
 const Icon = styled.img`
@@ -235,17 +235,20 @@ const TempValue = styled.div`
 `;
 const Fahrenheit = styled.button`
   height: 50%;
-  margin-top: 2.5%;
+  margin-top: 2%;
   border: 1px solid white;
+  border-radius: 0px 2px 2px 0px;
 `;
 const Celsius = styled.button`
   height: 50%;
-  margin-top: 2.5%;
+  margin-top: 2%;
   border: 1px solid white;
+  border-radius: 2px 0px 0px 2px;
 `;
 const Description = styled.h1`
   color: #ffffff;
   font-family: "Roboto", sans-serif;
+  font-weight: normal;
   font-size: 22px;
   letter-spacing: 0;
   text-align: center;
