@@ -39,6 +39,8 @@ const Favourite = () => {
                 likeStatus={JSON.parse(
                   localStorage.getItem("FavLocations")
                 ).includes(data.name)}
+                setChangeFav={setChangeFav}
+                changeFav={changeFav}
               ></TableRow>
             );
           })}

@@ -3,7 +3,7 @@ import styled from "styled-components";
 const AlertBox = ({ msg, changeFav, setChangeFav, setAlertStatus }) => {
   const handleClickYes = () => {
     const arr = [];
-    if (msg === "Are sure want to clear recent searches?") {
+    if (msg === "Are you sure want to clear recent searches?") {
       localStorage.setItem("RecentSearch", JSON.stringify(arr));
       localStorage.setItem("RecentLocations", JSON.stringify(arr));
     } else {
@@ -35,16 +35,16 @@ const Alert = styled.div`
     color: white;
     border-radius: 2px;
     margin-left: 2%;
-    width: 30%;
+    width: 25%;
     height: 100%;
   }
   height: 30%;
-  width: 40%;
+  width: 30%;
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 35%;
-  right: 30%;
+  top: 28%;
+  right: 35%;
   z-index: 4;
   border-radius: 2px;
   background-color: #ffffff;
