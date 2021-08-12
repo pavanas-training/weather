@@ -41,7 +41,11 @@ const RecentSearch = () => {
                 src={`/assets/icons/${data.weather[0].icon}.svg`}
                 likeStatus={JSON.parse(
                   localStorage.getItem("FavLocations")
-                ).includes(data.name)}
+                ).includes(
+                  `${data.name}, ${
+                    data.sys.country === "IN" ? "India" : data.sys.country
+                  }`
+                )}
                 setChangeFav={setChangeFav}
                 changeFav={changeFav}
                 data={data}

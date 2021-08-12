@@ -10,23 +10,41 @@ const Home = ({ location }) => {
   const [footerArray, setFooterArray] = useState([]);
   const [FState, setFState] = useState(false);
   const [CState, setCState] = useState(true);
-  const [favState, setFavState] = useState(false);
+  const [favState, setFavState] = useState();
 
   const handleFav = () => {
     var arr = JSON.parse(localStorage.getItem("Favourite"));
     var arr2 = JSON.parse(localStorage.getItem("FavLocations"));
-    if (arr2.includes(data.name)) {
-      const idx = arr2.indexOf(data.name);
+    if (
+      arr2.includes(
+        `${data.name}, ${
+          data.sys.country === "IN" ? "India" : data.sys.country
+        }`
+      )
+    ) {
+      const idx = arr2.indexOf(
+        `${data.name}, ${
+          data.sys.country === "IN" ? "India" : data.sys.country
+        }`
+      );
       arr2.splice(idx, 1);
       arr.splice(idx, 1);
     } else {
       arr.push(data);
-      arr2.push(data.name);
+      arr2.push(
+        `${data.name}, ${
+          data.sys.country === "IN" ? "India" : data.sys.country
+        }`
+      );
     }
     localStorage.setItem("FavLocations", JSON.stringify(arr2));
     localStorage.setItem("Favourite", JSON.stringify(arr));
     setFavState(
-      JSON.parse(localStorage.getItem("FavLocations")).includes(data.name)
+      JSON.parse(localStorage.getItem("FavLocations")).includes(
+        `${data.name}, ${
+          data.sys.country === "IN" ? "India" : data.sys.country
+        }`
+      )
     );
   };
 
@@ -62,14 +80,28 @@ const Home = ({ location }) => {
         updateFooter(data1);
         arr = JSON.parse(localStorage.getItem("RecentSearch"));
         arr2 = JSON.parse(localStorage.getItem("RecentLocations"));
-        if (!arr2.includes(data1.name)) {
+        if (
+          !arr2.includes(
+            `${data1.name}, ${
+              data1.sys.country === "IN" ? "India" : data1.sys.country
+            }`
+          )
+        ) {
           arr.push(data1);
-          arr2.push(data1.name);
+          arr2.push(
+            `${data1.name}, ${
+              data1.sys.country === "IN" ? "India" : data1.sys.country
+            }`
+          );
         }
         localStorage.setItem("RecentLocations", JSON.stringify(arr2));
         localStorage.setItem("RecentSearch", JSON.stringify(arr));
         setFavState(
-          JSON.parse(localStorage.getItem("FavLocations")).includes(data1.name)
+          JSON.parse(localStorage.getItem("FavLocations")).includes(
+            `${data1.name}, ${
+              data1.sys.country === "IN" ? "India" : data1.sys.country
+            }`
+          )
         );
       }
     };
@@ -80,7 +112,11 @@ const Home = ({ location }) => {
         data2 = await getCurrentLocationData();
         setData(data2);
         setFavState(
-          JSON.parse(localStorage.getItem("FavLocations")).includes(data2.name)
+          JSON.parse(localStorage.getItem("FavLocations")).includes(
+            `${data2.name}, ${
+              data2.sys.country === "IN" ? "India" : data2.sys.country
+            }`
+          )
         );
         if (data2 !== null) {
           updateFooter(data2);
