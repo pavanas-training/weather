@@ -34,7 +34,8 @@ const TableRow = ({
     <RowContainer>
       <Location>{location}</Location>
       <Icon src={src} alt="/assets/icons/icon_wind_info" />
-      <Temp>{`${temp}${"\u00b0"}c`}</Temp>
+      <Temp>{`${temp}`}</Temp>
+      <Cel>{`${"\u00b0"}c`}</Cel>
       <Weather>{weather}</Weather>
       <Button>
         <Like
@@ -93,7 +94,15 @@ const Temp = styled.h1`
   font-weight: 500;
   letter-spacing: 0;
   margin: 0;
+`;
+const Cel = styled.h1`
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  letter-spacing: 0;
+  font-weight: normal;
   margin-right: 5%;
+  margin-left: 1%;
 `;
 const Weather = styled.h1`
   color: #ffffff;
@@ -104,5 +113,6 @@ const Weather = styled.h1`
   margin-right: 30%;
   width: 20%;
   text-align: left;
+  font-weight: normal;
 `;
 export default TableRow;
