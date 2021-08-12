@@ -3,7 +3,7 @@ var result = null;
 export const getData = async (city) => {
   const params = {
     q: city,
-    APPID: "4f67fc981ccc6fc754ea38433271dcc9",
+    APPID: "a651830ba1ebad98fd2d945a4ba544f6",
     units: "metric",
   };
   await axios
@@ -12,15 +12,15 @@ export const getData = async (city) => {
       result = res.data;
     })
     .catch((error) => {
-      alert("City not found");
+      console.log("City not found");
     });
   return result;
 };
 export const getCurrentLocationData = async () => {
   const params = {
-    lat: 13.27,
-    lon: 74.83,
-    APPID: "4f67fc981ccc6fc754ea38433271dcc9",
+    lat: localStorage.getItem("Latitude"),
+    lon: localStorage.getItem("Longitude"),
+    APPID: "a651830ba1ebad98fd2d945a4ba544f6",
     units: "metric",
   };
   await axios
@@ -29,7 +29,7 @@ export const getCurrentLocationData = async () => {
       result = res.data;
     })
     .catch((error) => {
-      alert("City not found");
+      console.log("City not found");
     });
   return result;
 };

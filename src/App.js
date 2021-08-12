@@ -12,6 +12,27 @@ localStorage.getItem('RecentSearch');
 localStorage.getItem('Favourite');
 localStorage.setItem('RecentSearch',JSON.stringify(arr));
 localStorage.setItem('Favourite',JSON.stringify(arr));
+localStorage.getItem("Latitude");
+localStorage.setItem("Latitude",13.27);
+localStorage.getItem("Longitude");
+localStorage.setItem("Longitude",74.83);
+var options = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0
+};
+
+function success(pos) {
+  var crd = pos.coords;
+  localStorage.setItem("Latitude",crd.latitude);
+  localStorage.setItem("Longitude",crd.longitude);
+}
+
+function error(err) {
+  console.warn(`ERROR(${err.code}): ${err.message}`);
+}
+
+navigator.geolocation.getCurrentPosition(success, error, options);
   return(
   <Wrapper>
    <Routes />
