@@ -4,7 +4,10 @@ import moment from "moment";
 import search_icon from "../../assets/icons/icon_search_white.svg";
 import React, { useState } from "react";
 import { NavLink, useHistory } from "react-router-dom";
-const Header = ({ handleSearch }) => {
+const Header = () => {
+  const handleSearch = (location) => {
+    history.push({ pathname: "/home", state: { place: { location } } });
+  };
   const history = useHistory();
   const menuItems = ["HOME", "FAVOURITE", "RECENT SEARCH"];
   const [city, setCity] = useState();
@@ -23,7 +26,6 @@ const Header = ({ handleSearch }) => {
         <SearchButton
           onClick={() => {
             handleSearch(city);
-            history.push("/home");
           }}
         >
           <img alt="icon" src={search_icon}></img>

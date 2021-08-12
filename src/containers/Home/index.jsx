@@ -29,10 +29,7 @@ const Home = ({ location }) => {
       JSON.parse(localStorage.getItem("FavLocations")).includes(data.name)
     );
   };
-  const handleSearch = async (city) => {
-    setData(null);
-    callgetData(city);
-  };
+
   const handleChangeUnitToC = () => {
     setCState(true);
     setFState(false);
@@ -55,32 +52,22 @@ const Home = ({ location }) => {
       { heading: "Visibility", value: `${data.visibility / 1000}km` },
     ]);
   };
-  const callgetData = async (city) => {
-    var data1, arr, arr2;
-    data1 = await getData(city);
-    setData(data1);
-    if (data1 !== []) {
-      updateFooter(data1);
-      arr = JSON.parse(localStorage.getItem("RecentSearch"));
-      arr2 = JSON.parse(localStorage.getItem("RecentLocations"));
-      if (!arr2.includes(data1.name) && data1.name !== "udupi") {
-        arr.push(data1);
-        arr2.push(data1.name);
-      }
-      localStorage.setItem("RecentLocations", JSON.stringify(arr2));
-      localStorage.setItem("RecentSearch", JSON.stringify(arr));
-      setFavState(
-        JSON.parse(localStorage.getItem("FavLocations")).includes(data1.name)
-      );
-    }
-  };
+
   useEffect(() => {
-    const callget = async (city) => {
-      var data1;
+    const callgetData = async (city) => {
+      var data1, arr, arr2;
       data1 = await getData(city);
       setData(data1);
       if (data1 !== []) {
         updateFooter(data1);
+        arr = JSON.parse(localStorage.getItem("RecentSearch"));
+        arr2 = JSON.parse(localStorage.getItem("RecentLocations"));
+        if (!arr2.includes(data1.name) && data1.name !== "Udupi") {
+          arr.push(data1);
+          arr2.push(data1.name);
+        }
+        localStorage.setItem("RecentLocations", JSON.stringify(arr2));
+        localStorage.setItem("RecentSearch", JSON.stringify(arr));
         setFavState(
           JSON.parse(localStorage.getItem("FavLocations")).includes(data1.name)
         );
@@ -101,13 +88,13 @@ const Home = ({ location }) => {
       };
       callgetCurrentLocationData();
     } else {
-      callget(location.state.place.location);
+      callgetData(location.state.place.location);
     }
   }, [location]);
 
   return (
     <HomeContainer>
-      <Header handleSearch={handleSearch}></Header>
+      <Header></Header>
       {data && footerArray && (
         <Body>
           <City>{`${data.name}, ${
