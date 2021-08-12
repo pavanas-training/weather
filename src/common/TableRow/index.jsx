@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 const TableRow = ({
   location,
@@ -11,7 +10,6 @@ const TableRow = ({
   changeFav,
   data,
 }) => {
-  const history = useHistory();
   const [favState, setFavState] = useState(likeStatus);
   const handleFav = (e) => {
     e.stopPropagation();
@@ -33,7 +31,7 @@ const TableRow = ({
     setChangeFav(!changeFav);
   };
   return (
-    <RowContainer onClick={(e) => history.push("/home")}>
+    <RowContainer>
       <Location>{location}</Location>
       <Icon src={src} alt="icon" />
       <Temp>{`${temp}${"\u00b0"}c`}</Temp>
