@@ -34,7 +34,7 @@ const Favourite = () => {
                   data.weather[0].description.charAt(0).toUpperCase() +
                   data.weather[0].description.slice(1)
                 }
-                src={`/assets/icons/icon_mostly_sunny.svg`}
+                src={`/assets/icons/${data.weather[0].icon}.svg`}
                 likeStatus={JSON.parse(
                   localStorage.getItem("FavLocations")
                 ).includes(data.name)}

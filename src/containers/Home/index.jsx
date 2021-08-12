@@ -111,7 +111,7 @@ const Home = () => {
             )}
           </AddFavButton>
           <Icon
-            src={`/assets/icons/icon_mostly_cloudy_small.svg`}
+            src={`/assets/icons/${data.weather[0].icon}.svg`}
             alt="icon"
           ></Icon>
           {data && (

@@ -33,7 +33,7 @@ const TableRow = ({
   return (
     <RowContainer>
       <Location>{location}</Location>
-      <Icon src={src} alt="icon" />
+      <Icon src={src} alt="/assets/icons/icon_wind_info" />
       <Temp>{`${temp}${"\u00b0"}c`}</Temp>
       <Weather>{weather}</Weather>
       <Button>
