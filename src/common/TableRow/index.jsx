@@ -75,9 +75,12 @@ const Location = styled.h1`
   font-size: 16px;
   font-weight: 500;
   letter-spacing: 0;
-  margin-right: 20%;
-  width: 20%;
+  margin-right: 10%;
+  width: 30%;
   text-align: left;
+  :hover {
+    color: #ffd639;
+  }
 `;
 const Icon = styled.img`
   height: 100%;

@@ -62,7 +62,7 @@ const Home = ({ location }) => {
         updateFooter(data1);
         arr = JSON.parse(localStorage.getItem("RecentSearch"));
         arr2 = JSON.parse(localStorage.getItem("RecentLocations"));
-        if (!arr2.includes(data1.name) && data1.name !== "Udupi") {
+        if (!arr2.includes(data1.name)) {
           arr.push(data1);
           arr2.push(data1.name);
         }
@@ -90,7 +90,7 @@ const Home = ({ location }) => {
     } else {
       callgetData(location.state.place.location);
     }
-  }, [location]);
+  }, [location, data]);
 
   return (
     <HomeContainer>
@@ -154,7 +154,6 @@ const Home = ({ location }) => {
             );
           })}
       </FooterContainer>
-      )
     </HomeContainer>
   );
 };

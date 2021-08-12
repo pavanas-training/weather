@@ -30,7 +30,9 @@ const RecentSearch = () => {
             return (
               <TableRow
                 key={index}
-                location={`${data.name}`}
+                location={`${data.name}, ${
+                  data.sys.country === "IN" ? "India" : data.sys.country
+                }`}
                 temp={Math.trunc(data.main.temp)}
                 weather={
                   data.weather[0].description.charAt(0).toUpperCase() +
