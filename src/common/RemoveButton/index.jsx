@@ -25,7 +25,7 @@ const CountDisplay = styled.h1`
   height: 15px;
   width: 30%;
   color: #ffffff;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-size: 13px;
   letter-spacing: 0;
   text-align: left;

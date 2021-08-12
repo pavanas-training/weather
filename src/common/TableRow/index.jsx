@@ -64,7 +64,7 @@ const RowContainer = styled.div`
 `;
 const Location = styled.h1`
   color: #ffffff;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
   font-weight: 500;
   letter-spacing: 0;
@@ -88,7 +88,7 @@ const Button = styled.button`
 `;
 const Temp = styled.h1`
   color: #ffffff;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-size: 32px;
   font-weight: 500;
   letter-spacing: 0;
@@ -97,7 +97,7 @@ const Temp = styled.h1`
 `;
 const Weather = styled.h1`
   color: #ffffff;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-size: 18px;
   letter-spacing: 0;
   line-height: 21px;

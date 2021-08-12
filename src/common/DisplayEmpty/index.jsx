@@ -17,13 +17,12 @@ const StyledNothingIcon = styled.img`
 `;
 const StyledMessage = styled.h1`
   height: 21px;
-  width: 167px;
+  width: 100%;
   color: #ffffff;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-size: 18px;
   font-weight: 500;
   letter-spacing: 0;
   line-height: 21px;
-  margin-left: 43.5%;
 `;
 export default DisplayEmpty;

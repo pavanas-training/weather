@@ -52,7 +52,7 @@ const Alert = styled.div`
 `;
 const Message = styled.h1`
   color: #000000;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-size: 15px;
   letter-spacing: 0;
   text-align: center;
@@ -67,7 +67,7 @@ const ButtonContainer = styled.div`
 `;
 const ButtonYesNo = styled.button`
   color: #000000;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-size: 15px;
   font-weight: 500;
   letter-spacing: 0;

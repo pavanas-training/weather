@@ -178,7 +178,7 @@ const Body = styled.div`
 `;
 const City = styled.h1`
   color: #ffffff;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-size: 20px;
   font-weight: 500;
   letter-spacing: 0;
@@ -195,14 +195,14 @@ const AddFavButton = styled.button`
 `;
 const AddToFav = styled.h1`
   color: #ffffff;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0;
 `;
 const AddedToFav = styled.h1`
   color: #fad05b;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0;
@@ -225,7 +225,7 @@ const Temperature = styled.div`
   justify-content: center;
 `;
 const TempValue = styled.div`
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-size: 64px;
   font-weight: 500;
   letter-spacing: 0;
@@ -245,7 +245,7 @@ const Celsius = styled.button`
 `;
 const Description = styled.h1`
   color: #ffffff;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-size: 22px;
   letter-spacing: 0;
   text-align: center;

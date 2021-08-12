@@ -32,7 +32,7 @@ const InfoContainer = styled.div`
 
 const Key = styled.h1`
   color: #ffffff;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-size: 15px;
   letter-spacing: 0;
   line-height: 18px;
@@ -42,7 +42,7 @@ const Key = styled.h1`
 `;
 const Value = styled.h1`
   color: #ffffff;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-size: 22px;
   font-weight: 500;
   letter-spacing: 0;
