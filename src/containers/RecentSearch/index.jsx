@@ -9,8 +9,8 @@ import AlertBox from "../../common/AlertBox/index.jsx";
 const RecentSearch = () => {
   const [changeFav, setChangeFav] = useState(true);
   const [alertStatus, setAlertStatus] = useState(false);
-  useEffect(() => {}, [changeFav]);
   const recent = JSON.parse(localStorage.getItem("RecentSearch"));
+  useEffect(() => {}, [changeFav]);
   return (
     <>
       <RecentSearchContainer>

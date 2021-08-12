@@ -39,7 +39,7 @@ const TableRow = ({
       }
     >
       <Location>{location}</Location>
-      <Icon src={src} alt="/assets/icons/icon_wind_info" />
+      <Icon src={src} alt="icon" />
       <Temp>{`${temp}`}</Temp>
       <Cel>{`${"\u00b0"}c`}</Cel>
       <Weather>{weather}</Weather>
