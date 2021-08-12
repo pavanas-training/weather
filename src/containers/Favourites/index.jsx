@@ -10,7 +10,6 @@ const Favourite = () => {
   const [alertStatus, setAlertStatus] = useState(false);
   const fav = JSON.parse(localStorage.getItem("Favourite"));
   useEffect(() => {}, [changeFav]);
-  //const fav = JSON.parse(localStorage.getItem("Favourite"));
   return (
     <>
       <FavouriteContainer>

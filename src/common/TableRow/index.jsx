@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 const TableRow = ({
   location,
@@ -10,8 +11,10 @@ const TableRow = ({
   changeFav,
   data,
 }) => {
+  const history = useHistory();
   const [favState, setFavState] = useState(likeStatus);
-  const handleFav = () => {
+  const handleFav = (e) => {
+    e.stopPropagation();
     var arr = JSON.parse(localStorage.getItem("Favourite"));
     var arr2 = JSON.parse(localStorage.getItem("FavLocations"));
     if (arr2.includes(location)) {
@@ -30,7 +33,7 @@ const TableRow = ({
     setChangeFav(!changeFav);
   };
   return (
-    <RowContainer>
+    <RowContainer onClick={(e) => history.push("/home")}>
       <Location>{location}</Location>
       <Icon src={src} alt="icon" />
       <Temp>{`${temp}${"\u00b0"}c`}</Temp>
@@ -42,7 +45,7 @@ const TableRow = ({
               ? `/assets/icons/icon_liked.svg`
               : `/assets/icons/icon_not_liked.png`
           }
-          onClick={handleFav}
+          onClick={(e) => handleFav(e)}
         ></Like>
       </Button>
     </RowContainer>
@@ -56,6 +59,7 @@ const RowContainer = styled.div`
   display: flex;
   flex-direction: row;
   padding: 1.5% 2% 2% 2%;
+  text-decoration: none;
   :hover {
     background-color: rgba(255, 255, 255, 0.2);
   }
