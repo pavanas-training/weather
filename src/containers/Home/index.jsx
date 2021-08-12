@@ -5,7 +5,7 @@ import { getData, getCurrentLocationData } from "../../services/index.jsx";
 import FooterCard from "./common/FooterCard/index.jsx";
 
 import { useState, useEffect } from "react";
-const Home = () => {
+const Home = ({ location }) => {
   const [data, setData] = useState(null);
   const [footerArray, setFooterArray] = useState([]);
   const [FState, setFState] = useState(false);
@@ -75,19 +75,35 @@ const Home = () => {
     }
   };
   useEffect(() => {
-    const callgetCurrentLocationData = async () => {
-      var data2;
-      data2 = await getCurrentLocationData();
-      setData(data2);
-      setFavState(
-        JSON.parse(localStorage.getItem("FavLocations")).includes(data2.name)
-      );
-      if (data2 !== null) {
-        updateFooter(data2);
+    const callget = async (city) => {
+      var data1;
+      data1 = await getData(city);
+      setData(data1);
+      if (data1 !== []) {
+        updateFooter(data1);
+        setFavState(
+          JSON.parse(localStorage.getItem("FavLocations")).includes(data1.name)
+        );
       }
     };
-    callgetCurrentLocationData();
-  }, []);
+
+    if (location.state === undefined || location.state === null) {
+      const callgetCurrentLocationData = async () => {
+        var data2;
+        data2 = await getCurrentLocationData();
+        setData(data2);
+        setFavState(
+          JSON.parse(localStorage.getItem("FavLocations")).includes(data2.name)
+        );
+        if (data2 !== null) {
+          updateFooter(data2);
+        }
+      };
+      callgetCurrentLocationData();
+    } else {
+      callget(location.state.place.location);
+    }
+  }, [location]);
 
   return (
     <HomeContainer>
