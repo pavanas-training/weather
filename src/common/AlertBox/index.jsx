@@ -47,7 +47,7 @@ const Alert = styled.div`
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 28%;
+  top: 27%;
   right: 35%;
   z-index: 4;
   border-radius: 2px;

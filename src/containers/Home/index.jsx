@@ -285,6 +285,10 @@ const Fahrenheit = styled.button`
   border-radius: 0px 2px 2px 0px;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
+  @media (max-width: 550px) {
+    height: 25%;
+    margin-top: 6%;
+  }
 `;
 const Celsius = styled.button`
   height: 50%;
@@ -293,6 +297,10 @@ const Celsius = styled.button`
   border-radius: 2px 0px 0px 2px;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
+  @media (max-width: 550px) {
+    height: 25%;
+    margin-top: 6%;
+  }
 `;
 const Description = styled.h1`
   color: #ffffff;

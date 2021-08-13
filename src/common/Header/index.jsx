@@ -69,6 +69,9 @@ const TopContainer = styled.div`
 const Logo = styled.img`
   width: 25%;
   height: 90%;
+  @media (max-width: 550px) {
+    margin-left: 5%;
+  }
 `;
 const StyledInput = styled.input`
   background-color: rgba(255, 255, 255, 0.2);

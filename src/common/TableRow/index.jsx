@@ -81,9 +81,6 @@ const Location = styled.h1`
   :hover {
     color: #ffd639;
   }
-  @media (max-width: 550px) {
-    margin-top: 1rem;
-  }
 `;
 const Icon = styled.img`
   height: 90%;
@@ -96,9 +93,13 @@ const Icon = styled.img`
   }
 `;
 const Like = styled.img`
-  height: 100%;
-  width: 100%;
+  height: 80%;
+  width: 110%;
   margin: 0;
+  @media (max-width: 550px) {
+    height: 100%;
+    width: 100%;
+  }
 `;
 const Button = styled.button`
   background-color: transparent;
@@ -133,8 +134,11 @@ const Weather = styled.h1`
   font-size: 1.125rem;
   letter-spacing: 0;
   margin-right: 20%;
-  width: 70%;
+  width: 30%;
   text-align: left;
   font-weight: 400;
+  @media (max-width: 550px) {
+    margin-top: 1%;
+  }
 `;
 export default TableRow;

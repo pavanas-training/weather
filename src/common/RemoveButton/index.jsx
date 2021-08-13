@@ -29,6 +29,7 @@ const CountDisplay = styled.h1`
   font-size: 0.813rem;
   letter-spacing: 0;
   text-align: left;
+  font-weight: normal;
 `;
 const ClearButton = styled.button`
   background-color: transparent;
@@ -41,4 +42,5 @@ const ClearButton = styled.button`
   text-align: right;
   padding-right: 0;
   font-size: 0.813rem;
+  font-weight: normal;
 `;
