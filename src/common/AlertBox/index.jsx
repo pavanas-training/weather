@@ -53,11 +53,17 @@ const Alert = styled.div`
   border-radius: 2px;
   background-color: #ffffff;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.3);
+  @media (max-width: 550px) {
+    height: 20%;
+    width: 45%;
+    top: 25.75%;
+    right: 28%;
+  }
 `;
 const Message = styled.h1`
   color: #000000;
   font-family: "Roboto", sans-serif;
-  font-size: 15px;
+  font-size: 0.938rem;
   letter-spacing: 0;
   text-align: center;
   margin-top: 10%;
@@ -73,7 +79,7 @@ const ButtonContainer = styled.div`
 const ButtonYesNo = styled.button`
   color: #000000;
   font-family: "Roboto", sans-serif;
-  font-size: 15px;
+  font-size: 0.938rem;
   letter-spacing: 0;
   text-align: center;
   background-color: transparent;

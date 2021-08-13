@@ -75,7 +75,7 @@ const StyledInput = styled.input`
   border: 1px solid #ffffff;
   border-radius: 3px 0px 0px 3px;
   font-family: "Roboto", sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   outline: none;
   width: 35%;
   color: #ffffff;
@@ -103,7 +103,7 @@ const NavbarContainer = styled.div`
   .header-elements {
     color: #ffffff;
     font-family: "Roboto", sans-serif;
-    font-size: 15px;
+    font-size: 0.938rem;
     text-decoration: none;
     margin: 3% 2% 0% 0%;
     padding-left: 2%;
@@ -120,7 +120,7 @@ const NavbarContainer = styled.div`
 const StyledToday = styled.h1`
   color: #ffffff;
   font-family: "Roboto", sans-serif;
-  font-size: 15px;
+  font-size: 0.938rem;
   margin: 3% 0% 0% auto;
   font-weight: normal;
 `;

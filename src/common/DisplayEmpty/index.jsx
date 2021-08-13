@@ -20,7 +20,7 @@ const StyledMessage = styled.h1`
   width: 100%;
   color: #ffffff;
   font-family: "Roboto", sans-serif;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 500;
   letter-spacing: 0;
   line-height: 21px;

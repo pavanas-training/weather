@@ -62,7 +62,7 @@ const Home = ({ location }) => {
         heading: "Min - Max",
         value: `${Math.trunc(data.main.temp_min)}${"\u00b0"}-${Math.trunc(
           data.main.temp_max
-        )}${"\u00b0"}C`,
+        )}`,
       },
       { heading: "Precipitation", value: "0%" },
       { heading: "Humidity", value: `${data.main.humidity}%` },
@@ -218,7 +218,7 @@ const Body = styled.div`
 const City = styled.h1`
   color: #ffffff;
   font-family: "Roboto", sans-serif;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 500;
   letter-spacing: 0;
   text-align: left;
@@ -235,14 +235,14 @@ const AddFavButton = styled.button`
 const AddToFav = styled.h1`
   color: #ffffff;
   font-family: "Roboto", sans-serif;
-  font-size: 13px;
+  font-size: 0.813rem;
   font-weight: 500;
   letter-spacing: 0;
 `;
 const AddedToFav = styled.h1`
   color: #fad05b;
   font-family: "Roboto", sans-serif;
-  font-size: 13px;
+  font-size: 0.813rem;
   font-weight: 500;
   letter-spacing: 0;
 `;
@@ -255,6 +255,12 @@ const Icon = styled.img`
   width: 30%;
   height: 20%;
   margin: 3% 35% 1% 35%;
+
+  @media (max-width: 550px) {
+    height: 15%;
+    width: 10%;
+    margin: 3% 0% 1% 45%;
+  }
 `;
 const Temperature = styled.div`
   width: 100%;
@@ -265,7 +271,7 @@ const Temperature = styled.div`
 `;
 const TempValue = styled.div`
   font-family: "Roboto", sans-serif;
-  font-size: 64px;
+  font-size: 4rem;
   font-weight: 500;
   letter-spacing: 0;
   color: white;
@@ -278,7 +284,7 @@ const Fahrenheit = styled.button`
   border: 1px solid white;
   border-radius: 0px 2px 2px 0px;
   font-family: "Roboto", sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
 `;
 const Celsius = styled.button`
   height: 50%;
@@ -286,13 +292,13 @@ const Celsius = styled.button`
   border: 1px solid white;
   border-radius: 2px 0px 0px 2px;
   font-family: "Roboto", sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
 `;
 const Description = styled.h1`
   color: #ffffff;
   font-family: "Roboto", sans-serif;
   font-weight: normal;
-  font-size: 22px;
+  font-size: 1.375rem;
   letter-spacing: 0;
   text-align: center;
 `;
@@ -305,5 +311,11 @@ const FooterContainer = styled.div`
   justify-content: space-around;
   margin-left: 5%;
   padding: 0% 10% 0% 10%;
+  @media (max-width: 550px) {
+    width: 95%;
+    margin-top: 0.625rem;
+    padding: 0;
+    justify-content: space-between;
+  }
 `;
 export default Home;

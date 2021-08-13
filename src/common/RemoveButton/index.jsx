@@ -26,13 +26,13 @@ const CountDisplay = styled.h1`
   width: 30%;
   color: #ffffff;
   font-family: "Roboto", sans-serif;
-  font-size: 13px;
+  font-size: 0.813rem;
   letter-spacing: 0;
   text-align: left;
 `;
 const ClearButton = styled.button`
   background-color: transparent;
-  width: 9%;
+  width: 20%;
   height: 100%;
   margin-right: 0;
   border: none;
@@ -40,4 +40,5 @@ const ClearButton = styled.button`
   font-style: "Roboto";
   text-align: right;
   padding-right: 0;
+  font-size: 0.813rem;
 `;

@@ -72,24 +72,32 @@ const RowContainer = styled.div`
 const Location = styled.h1`
   color: #ffffff;
   font-family: "Roboto", sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0;
   margin-right: 10%;
-  width: 30%;
+  width: 40%;
   text-align: left;
   :hover {
     color: #ffd639;
   }
+  @media (max-width: 550px) {
+    margin-top: 1rem;
+  }
 `;
 const Icon = styled.img`
-  height: 100%;
+  height: 90%;
   width: 15%;
   margin: 0;
+  @media (max-width: 550px) {
+    height: 50%;
+    width: 45%;
+    margin-top: 0.625rem;
+  }
 `;
 const Like = styled.img`
-  height: 60%;
-  width: 90%;
+  height: 100%;
+  width: 100%;
   margin: 0;
 `;
 const Button = styled.button`
@@ -99,29 +107,34 @@ const Button = styled.button`
 const Temp = styled.h1`
   color: #ffffff;
   font-family: "Roboto", sans-serif;
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 500;
   letter-spacing: 0;
   margin: 0;
+  @media (max-width: 550px) {
+    margin-top: 0.625rem;
+  }
 `;
 const Cel = styled.h1`
   color: #ffffff;
   font-family: "Roboto", sans-serif;
-  font-size: 18px;
+  font-size: 1.125rem;
   letter-spacing: 0;
-  font-weight: normal;
+  font-weight: 400;
   margin-right: 5%;
   margin-left: 1%;
+  @media (max-width: 550px) {
+    margin-top: 1.325rem;
+  }
 `;
 const Weather = styled.h1`
   color: #ffffff;
   font-family: "Roboto", sans-serif;
-  font-size: 18px;
+  font-size: 1.125rem;
   letter-spacing: 0;
-  line-height: 21px;
-  margin-right: 30%;
-  width: 20%;
+  margin-right: 20%;
+  width: 70%;
   text-align: left;
-  font-weight: normal;
+  font-weight: 400;
 `;
 export default TableRow;
