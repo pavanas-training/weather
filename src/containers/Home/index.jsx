@@ -203,6 +203,7 @@ const HomeContainer = styled.div`
   }
   .inactive {
     background-color: transparent;
+    color: white;
   }
 `;
 const Body = styled.div`
@@ -276,12 +277,16 @@ const Fahrenheit = styled.button`
   margin-top: 2%;
   border: 1px solid white;
   border-radius: 0px 2px 2px 0px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
 `;
 const Celsius = styled.button`
   height: 50%;
   margin-top: 2%;
   border: 1px solid white;
   border-radius: 2px 0px 0px 2px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
 `;
 const Description = styled.h1`
   color: #ffffff;

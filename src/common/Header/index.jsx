@@ -71,15 +71,15 @@ const Logo = styled.img`
   height: 90%;
 `;
 const StyledInput = styled.input`
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.2);
   border: 1px solid #ffffff;
   border-radius: 3px 0px 0px 3px;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   outline: none;
-  width: 40%;
+  width: 35%;
   color: #ffffff;
-  margin-left: 33%;
+  margin-left: 38%;
   border-right: none;
   text-decoration: none;
   ::placeholder {
@@ -87,9 +87,10 @@ const StyledInput = styled.input`
   }
 `;
 const SearchButton = styled.button`
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.2);
   border: 1px solid white;
   border-left: none;
+  border-radius: 0px 3px 3px 0px;
 `;
 const NavbarContainer = styled.div`
   width: 95%;
@@ -104,7 +105,7 @@ const NavbarContainer = styled.div`
     font-family: "Roboto", sans-serif;
     font-size: 15px;
     text-decoration: none;
-    margin: 3% 8% 0% 0%;
+    margin: 3% 2% 0% 0%;
     padding-left: 2%;
     padding-right: 2%;
     :hover {
@@ -122,7 +123,6 @@ const StyledToday = styled.h1`
   font-size: 15px;
   margin: 3% 0% 0% auto;
   font-weight: normal;
-  font-style: thin;
 `;
 
 export default Header;
