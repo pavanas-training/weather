@@ -48,7 +48,7 @@ const TableRow = ({
           src={
             favState || !data
               ? `/assets/icons/icon_liked.svg`
-              : `/assets/icons/icon_not_liked.png`
+              : `/assets/icons/icon_not_liked.svg`
           }
           onClick={(e) => handleFav(e)}
         ></Like>

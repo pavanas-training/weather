@@ -62,7 +62,7 @@ const Home = ({ location }) => {
         heading: "Min - Max",
         value: `${Math.trunc(data.main.temp_min)}${"\u00b0"}-${Math.trunc(
           data.main.temp_max
-        )}`,
+        )}${"\u00b0"}`,
       },
       { heading: "Precipitation", value: "0%" },
       { heading: "Humidity", value: `${data.main.humidity}%` },
@@ -144,7 +144,7 @@ const Home = ({ location }) => {
               </>
             ) : (
               <>
-                <Like src={`/assets/icons/icon_not_liked.png`}></Like>
+                <Like src={`/assets/icons/icon_not_liked.svg`}></Like>
                 <AddToFav>Add to favourite</AddToFav>
               </>
             )}
@@ -222,6 +222,7 @@ const City = styled.h1`
   font-weight: 500;
   letter-spacing: 0;
   text-align: left;
+  margin-left: 2%;
 `;
 
 const AddFavButton = styled.button`
@@ -231,6 +232,7 @@ const AddFavButton = styled.button`
   border: none;
   display: flex;
   flex-direction: row;
+  margin-left: 2%;
 `;
 const AddToFav = styled.h1`
   color: #ffffff;
@@ -247,9 +249,9 @@ const AddedToFav = styled.h1`
   letter-spacing: 0;
 `;
 const Like = styled.img`
-  height: 70%;
-  width: 4%;
-  margin: 1.5% 2% 0% -1.5%; ;
+  height: 18px;
+  width: 18px;
+  margin: 1.25% 2% 0% -1%; ;
 `;
 const Icon = styled.img`
   width: 30%;
