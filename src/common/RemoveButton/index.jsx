@@ -13,7 +13,7 @@ const RemoveButton = ({ msg, setAlertStatus, btn_name }) => {
 };
 export default RemoveButton;
 const Container = styled.div`
-  width: 95%;
+  width: 94%;
   height: 5%;
   margin: 0% 0% 0% 5%;
   background-color: transparent;
@@ -30,17 +30,17 @@ const CountDisplay = styled.h1`
   letter-spacing: 0;
   text-align: left;
   font-weight: normal;
+  margin-left: 2%;
 `;
 const ClearButton = styled.button`
   background-color: transparent;
   width: 20%;
   height: 100%;
-  margin-right: 0;
   border: none;
   color: white;
   font-style: "Roboto";
   text-align: right;
-  padding-right: 0;
   font-size: 0.813rem;
   font-weight: normal;
+  padding-right: 0;
 `;

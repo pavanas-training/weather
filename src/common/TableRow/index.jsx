@@ -122,7 +122,7 @@ const Cel = styled.h1`
   font-size: 1.125rem;
   letter-spacing: 0;
   font-weight: 400;
-  margin-right: 5%;
+  margin-right: 3%;
   margin-left: 1%;
   @media (max-width: 550px) {
     margin-top: 1.325rem;

@@ -87,6 +87,10 @@ const StyledInput = styled.input`
   text-decoration: none;
   ::placeholder {
     color: #ffffff;
+    opacity: 0.8;
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
+    padding-left: 2%;
   }
 `;
 const SearchButton = styled.button`
@@ -94,6 +98,7 @@ const SearchButton = styled.button`
   border: 1px solid white;
   border-left: none;
   border-radius: 0px 3px 3px 0px;
+  padding-right: 1%;
 `;
 const NavbarContainer = styled.div`
   width: 95%;
@@ -124,7 +129,7 @@ const StyledToday = styled.h1`
   color: #ffffff;
   font-family: "Roboto", sans-serif;
   font-size: 0.938rem;
-  margin: 3% 0% 0% auto;
+  margin: 3% 1% 0% auto;
   font-weight: normal;
 `;
 
