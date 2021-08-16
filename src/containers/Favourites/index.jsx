@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import Header from "../../common/Header/index.jsx";
 import DisplayEmpty from "../../common/DisplayEmpty/index.jsx";
 import TableRow from "../../common/TableRow/index.jsx";
@@ -13,6 +13,7 @@ const Favourite = () => {
   return (
     <>
       <FavouriteContainer>
+        <div className="overlay" id={alertStatus && "overlay"}></div>
         <Header />
         {fav.length !== 0 && (
           <RemoveButton
@@ -61,13 +62,33 @@ const Favourite = () => {
           setAlertStatus={setAlertStatus}
         ></AlertBox>
       )}
+      <AlertStyle />
     </>
   );
 };
+
+const AlertStyle = createGlobalStyle`
+#overlay:not(.alert.show) {
+  display: block;
+}`;
+
 const FavouriteContainer = styled.div`
   background-color: transparent;
   width: 100%;
   height: 100%;
+  .overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.5;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 3;
+  }
 `;
 
 export default Favourite;
