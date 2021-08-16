@@ -13,9 +13,7 @@ localStorage.getItem('Favourite');
 localStorage.setItem('RecentSearch',JSON.stringify(arr));
 localStorage.setItem('Favourite',JSON.stringify(arr));
 localStorage.getItem("Latitude");
-localStorage.setItem("Latitude",13.27);
 localStorage.getItem("Longitude");
-localStorage.setItem("Longitude",74.83);
 var options = {
   enableHighAccuracy: true,
   timeout: 5000,

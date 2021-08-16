@@ -93,8 +93,8 @@ const Icon = styled.img`
   }
 `;
 const Like = styled.img`
-  height: 80%;
-  width: 110%;
+  height: 90%;
+  width: 90%;
   margin: 0;
   @media (max-width: 550px) {
     height: 100%;

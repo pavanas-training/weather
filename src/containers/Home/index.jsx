@@ -249,9 +249,14 @@ const AddedToFav = styled.h1`
   letter-spacing: 0;
 `;
 const Like = styled.img`
-  height: 18px;
-  width: 18px;
-  margin: 1.25% 2% 0% -1%; ;
+  height: 1.125rem;
+  width: 1.125rem;
+  margin: 1% 2% 0% -1%;
+  @media (max-width: 550px) {
+    height: 1rem;
+    width: 1rem;
+    margin: 3% 3% 0% -3%;
+  }
 `;
 const Icon = styled.img`
   width: 30%;
