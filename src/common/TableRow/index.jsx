@@ -131,12 +131,12 @@ const Cel = styled.h1`
 const Weather = styled.h1`
   color: #ffffff;
   font-family: "Roboto", sans-serif;
+  font-weight: 100;
   font-size: 1.125rem;
   letter-spacing: 0;
   margin-right: 20%;
   width: 30%;
   text-align: left;
-  font-weight: 200;
   @media (max-width: 550px) {
     margin-top: 1%;
   }

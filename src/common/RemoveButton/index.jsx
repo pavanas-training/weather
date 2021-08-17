@@ -42,5 +42,5 @@ const ClearButton = styled.button`
   text-align: right;
   font-size: 0.813rem;
   font-weight: normal;
-  padding-right: 0;
+  padding-right: 0.8%;
 `;
