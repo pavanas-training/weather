@@ -45,10 +45,8 @@ const Header = () => {
             </NavLink>
           );
         })}
-        <StyledToday>
-          {moment().format("ddd, DD MMM YYYY")}
-          {moment().format(" h:mm A")}
-        </StyledToday>
+        <StyledDate>{moment().format("ddd, DD MMM YYYY")}</StyledDate>
+        <StyledTime>{moment().format(" h:mm A")}</StyledTime>
       </NavbarContainer>
     </Wrapper>
   );
@@ -75,7 +73,7 @@ const Logo = styled.img`
 `;
 const StyledInput = styled.input`
   background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 3px 0px 0px 3px;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
@@ -95,7 +93,7 @@ const StyledInput = styled.input`
 `;
 const SearchButton = styled.button`
   background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-left: none;
   border-radius: 0px 3px 3px 0px;
   padding-right: 1%;
@@ -103,7 +101,7 @@ const SearchButton = styled.button`
 const NavbarContainer = styled.div`
   width: 95%;
   height: 40%;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -120,17 +118,27 @@ const NavbarContainer = styled.div`
       color: #ffd639;
     }
   }
+  
   .selected {
     color: #ffd639;
     border-bottom: 3px solid;
   }
 `;
-const StyledToday = styled.h1`
+const StyledDate = styled.h1`
   color: #ffffff;
   font-family: "Roboto", sans-serif;
   font-size: 0.938rem;
-  margin: 3% 1% 0% auto;
+  margin: 3% 1% 0% 44%;
+  font-weight: normal;
+  @media (max-width: 550px) {
+    margin: 3% 3% 0% 5%;
+  }
+`;
+const StyledTime = styled.h1`
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.938rem;
+  margin: 3% auto;
   font-weight: normal;
 `;
-
 export default Header;

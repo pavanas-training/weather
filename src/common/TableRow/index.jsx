@@ -58,7 +58,7 @@ const TableRow = ({
 };
 const RowContainer = styled.div`
   width: 91%;
-  height: 5%;
+  height: 4.5%;
   margin: 0% 0% 0.15% 5%;
   background-color: rgba(255, 255, 255, 0.1);
   display: flex;
@@ -73,7 +73,7 @@ const Location = styled.h1`
   color: #ffffff;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: normal;
   letter-spacing: 0;
   margin-right: 10%;
   width: 40%;
@@ -136,7 +136,7 @@ const Weather = styled.h1`
   margin-right: 20%;
   width: 30%;
   text-align: left;
-  font-weight: 400;
+  font-weight: 200;
   @media (max-width: 550px) {
     margin-top: 1%;
   }

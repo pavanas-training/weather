@@ -38,17 +38,17 @@ const Alert = styled.div`
     border-radius: 2px;
     margin-left: 2%;
     width: 25%;
-    height: 100%;
+    height: 85%;
     font-weight: normal;
   }
 
   height: 30%;
-  width: 30%;
+  width: 35%;
   display: flex;
   flex-direction: column;
   position: absolute;
   top: 27%;
-  right: 35%;
+  right: 33.5%;
   z-index: 4;
   border-radius: 2px;
   background-color: #ffffff;
@@ -66,7 +66,7 @@ const Message = styled.h1`
   font-size: 0.938rem;
   letter-spacing: 0;
   text-align: center;
-  margin-top: 10%;
+  margin-top: 13%;
   margin-bottom: 10%;
   font-weight: normal;
 `;

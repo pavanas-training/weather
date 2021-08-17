@@ -213,7 +213,7 @@ const Body = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 `;
 const City = styled.h1`
   color: #ffffff;
@@ -261,7 +261,7 @@ const Like = styled.img`
 const Icon = styled.img`
   width: 30%;
   height: 20%;
-  margin: 3% 35% 1% 35%;
+  margin: 6% 35% 1% 35%;
 
   @media (max-width: 550px) {
     height: 15%;
@@ -286,26 +286,32 @@ const TempValue = styled.div`
   margin-right: 1%;
 `;
 const Fahrenheit = styled.button`
-  height: 50%;
-  margin-top: 2%;
+  height: 45%;
+  width: 2.25%;
+  margin-top: 2.2%;
   border: 1px solid white;
   border-radius: 0px 2px 2px 0px;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
+  padding-left: 0.3%;
   @media (max-width: 550px) {
     height: 25%;
+    width: 5%;
     margin-top: 6%;
   }
 `;
 const Celsius = styled.button`
-  height: 50%;
-  margin-top: 2%;
+  height: 45%;
+  width: 2.25%;
+  margin-top: 2.2%;
   border: 1px solid white;
   border-radius: 2px 0px 0px 2px;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
+  padding-left: 0.3%;
   @media (max-width: 550px) {
     height: 25%;
+    width: 5%;
     margin-top: 6%;
   }
 `;
