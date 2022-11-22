@@ -1,9 +1,9 @@
-name: Lint-test
-
-on: pull_request
-
+name: Lint test
+on: push
 jobs:
-  lint:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: ibiqlik/action-yamllint@v3
+    - uses: actions/checkout@v2
+    - name: Run ESLint
+      run: npm run lint
