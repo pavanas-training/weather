@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import icon from "../../assets/icons/icon_nothing.svg";
+import React from 'react';
+import styled from 'styled-components';
+import icon from '../../assets/icons/icon_nothing.svg';
 const DisplayEmpty = ({ msg }) => {
   return (
     <DisplayEmptyContainer>
@@ -19,7 +19,7 @@ const StyledMessage = styled.h1`
   height: 21px;
   width: 100%;
   color: #ffffff;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.125rem;
   font-weight: 500;
   letter-spacing: 0;

@@ -1,10 +1,10 @@
-import React from "react";
-import styled from "styled-components";
-import Header from "../../common/Header/index.jsx";
-import { getData, getCurrentLocationData } from "../../services/index.jsx";
-import FooterCard from "./common/FooterCard/index.jsx";
+import React from 'react';
+import styled from 'styled-components';
+import Header from '../../common/Header/index.jsx';
+import { getData, getCurrentLocationData } from '../../services/index.jsx';
+import FooterCard from './common/FooterCard/index.jsx';
 
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 const Home = ({ location }) => {
   const [data, setData] = useState(null);
   const [footerArray, setFooterArray] = useState([]);
@@ -13,37 +13,23 @@ const Home = ({ location }) => {
   const [favState, setFavState] = useState();
 
   const handleFav = () => {
-    var arr = JSON.parse(localStorage.getItem("Favourite"));
-    var arr2 = JSON.parse(localStorage.getItem("FavLocations"));
-    if (
-      arr2.includes(
-        `${data.name}, ${
-          data.sys.country === "IN" ? "India" : data.sys.country
-        }`
-      )
-    ) {
+    var arr = JSON.parse(localStorage.getItem('Favourite'));
+    var arr2 = JSON.parse(localStorage.getItem('FavLocations'));
+    if (arr2.includes(`${data.name}, ${data.sys.country === 'IN' ? 'India' : data.sys.country}`)) {
       const idx = arr2.indexOf(
-        `${data.name}, ${
-          data.sys.country === "IN" ? "India" : data.sys.country
-        }`
+        `${data.name}, ${data.sys.country === 'IN' ? 'India' : data.sys.country}`
       );
       arr2.splice(idx, 1);
       arr.splice(idx, 1);
     } else {
       arr.push(data);
-      arr2.push(
-        `${data.name}, ${
-          data.sys.country === "IN" ? "India" : data.sys.country
-        }`
-      );
+      arr2.push(`${data.name}, ${data.sys.country === 'IN' ? 'India' : data.sys.country}`);
     }
-    localStorage.setItem("FavLocations", JSON.stringify(arr2));
-    localStorage.setItem("Favourite", JSON.stringify(arr));
+    localStorage.setItem('FavLocations', JSON.stringify(arr2));
+    localStorage.setItem('Favourite', JSON.stringify(arr));
     setFavState(
-      JSON.parse(localStorage.getItem("FavLocations")).includes(
-        `${data.name}, ${
-          data.sys.country === "IN" ? "India" : data.sys.country
-        }`
+      JSON.parse(localStorage.getItem('FavLocations')).includes(
+        `${data.name}, ${data.sys.country === 'IN' ? 'India' : data.sys.country}`
       )
     );
   };
@@ -59,15 +45,15 @@ const Home = ({ location }) => {
   const updateFooter = (data) => {
     setFooterArray([
       {
-        heading: "Min - Max",
-        value: `${Math.trunc(data.main.temp_min)}${"\u00b0"}-${Math.trunc(
+        heading: 'Min - Max',
+        value: `${Math.trunc(data.main.temp_min)}${'\u00b0'}-${Math.trunc(
           data.main.temp_max
-        )}${"\u00b0"}`,
+        )}${'\u00b0'}`,
       },
-      { heading: "Precipitation", value: "0%" },
-      { heading: "Humidity", value: `${data.main.humidity}%` },
-      { heading: "Wind", value: `${data.wind.speed}m/s` },
-      { heading: "Visibility", value: `${data.visibility / 1000}km` },
+      { heading: 'Precipitation', value: '0%' },
+      { heading: 'Humidity', value: `${data.main.humidity}%` },
+      { heading: 'Wind', value: `${data.wind.speed}m/s` },
+      { heading: 'Visibility', value: `${data.visibility / 1000}km` },
     ]);
   };
 
@@ -78,29 +64,21 @@ const Home = ({ location }) => {
       setData(data1);
       if (data1 !== []) {
         updateFooter(data1);
-        arr = JSON.parse(localStorage.getItem("RecentSearch"));
-        arr2 = JSON.parse(localStorage.getItem("RecentLocations"));
+        arr = JSON.parse(localStorage.getItem('RecentSearch'));
+        arr2 = JSON.parse(localStorage.getItem('RecentLocations'));
         if (
           !arr2.includes(
-            `${data1.name}, ${
-              data1.sys.country === "IN" ? "India" : data1.sys.country
-            }`
+            `${data1.name}, ${data1.sys.country === 'IN' ? 'India' : data1.sys.country}`
           )
         ) {
           arr.push(data1);
-          arr2.push(
-            `${data1.name}, ${
-              data1.sys.country === "IN" ? "India" : data1.sys.country
-            }`
-          );
+          arr2.push(`${data1.name}, ${data1.sys.country === 'IN' ? 'India' : data1.sys.country}`);
         }
-        localStorage.setItem("RecentLocations", JSON.stringify(arr2));
-        localStorage.setItem("RecentSearch", JSON.stringify(arr));
+        localStorage.setItem('RecentLocations', JSON.stringify(arr2));
+        localStorage.setItem('RecentSearch', JSON.stringify(arr));
         setFavState(
-          JSON.parse(localStorage.getItem("FavLocations")).includes(
-            `${data1.name}, ${
-              data1.sys.country === "IN" ? "India" : data1.sys.country
-            }`
+          JSON.parse(localStorage.getItem('FavLocations')).includes(
+            `${data1.name}, ${data1.sys.country === 'IN' ? 'India' : data1.sys.country}`
           )
         );
       }
@@ -112,10 +90,8 @@ const Home = ({ location }) => {
         data2 = await getCurrentLocationData();
         setData(data2);
         setFavState(
-          JSON.parse(localStorage.getItem("FavLocations")).includes(
-            `${data2.name}, ${
-              data2.sys.country === "IN" ? "India" : data2.sys.country
-            }`
+          JSON.parse(localStorage.getItem('FavLocations')).includes(
+            `${data2.name}, ${data2.sys.country === 'IN' ? 'India' : data2.sys.country}`
           )
         );
         if (data2 !== null) {
@@ -133,9 +109,7 @@ const Home = ({ location }) => {
       <Header></Header>
       {data && footerArray && (
         <Body>
-          <City>{`${data.name}, ${
-            data.sys.country === "IN" ? "India" : data.sys.country
-          }`}</City>
+          <City>{`${data.name}, ${data.sys.country === 'IN' ? 'India' : data.sys.country}`}</City>
           <AddFavButton onClick={handleFav}>
             {favState ? (
               <>
@@ -149,25 +123,20 @@ const Home = ({ location }) => {
               </>
             )}
           </AddFavButton>
-          <Icon
-            src={`/assets/icons/${data.weather[0].icon}.svg`}
-            alt="icon"
-          ></Icon>
+          <Icon src={`/assets/icons/${data.weather[0].icon}.svg`} alt='icon'></Icon>
           {data && (
             <Temperature>
               <TempValue>
-                {CState
-                  ? Math.trunc(data.main.temp)
-                  : Math.trunc((data.main.temp * 9) / 5 + 32)}
+                {CState ? Math.trunc(data.main.temp) : Math.trunc((data.main.temp * 9) / 5 + 32)}
               </TempValue>
               <Celsius
-                className={FState ? "inactive" : "active"}
+                className={FState ? 'inactive' : 'active'}
                 onClick={handleChangeUnitToC}
-              >{`${"\u00b0"}C`}</Celsius>
+              >{`${'\u00b0'}C`}</Celsius>
               <Fahrenheit
-                className={CState ? "inactive" : "active"}
+                className={CState ? 'inactive' : 'active'}
                 onClick={handleChangeUnitToF}
-              >{`${"\u00b0"}F`}</Fahrenheit>
+              >{`${'\u00b0'}F`}</Fahrenheit>
             </Temperature>
           )}
           <Description>
@@ -217,7 +186,7 @@ const Body = styled.div`
 `;
 const City = styled.h1`
   color: #ffffff;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.25rem;
   font-weight: 500;
   letter-spacing: 0;
@@ -236,14 +205,14 @@ const AddFavButton = styled.button`
 `;
 const AddToFav = styled.h1`
   color: #ffffff;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 0.813rem;
   font-weight: 500;
   letter-spacing: 0;
 `;
 const AddedToFav = styled.h1`
   color: #fad05b;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 0.813rem;
   font-weight: 500;
   letter-spacing: 0;
@@ -277,7 +246,7 @@ const Temperature = styled.div`
   justify-content: center;
 `;
 const TempValue = styled.div`
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 4rem;
   font-weight: 500;
   letter-spacing: 0;
@@ -291,7 +260,7 @@ const Fahrenheit = styled.button`
   margin-top: 2.2%;
   border: 1px solid white;
   border-radius: 0px 2px 2px 0px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   padding-left: 0.3%;
   @media (max-width: 550px) {
@@ -306,7 +275,7 @@ const Celsius = styled.button`
   margin-top: 2.2%;
   border: 1px solid white;
   border-radius: 2px 0px 0px 2px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   padding-left: 0.3%;
   @media (max-width: 550px) {
@@ -317,7 +286,7 @@ const Celsius = styled.button`
 `;
 const Description = styled.h1`
   color: #ffffff;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: normal;
   font-size: 1.375rem;
   letter-spacing: 0;

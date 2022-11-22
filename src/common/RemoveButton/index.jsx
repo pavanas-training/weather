@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 const RemoveButton = ({ msg, setAlertStatus, btn_name }) => {
   const handleClear = () => {
     setAlertStatus(true);
@@ -25,7 +25,7 @@ const CountDisplay = styled.h1`
   height: 15px;
   width: 30%;
   color: #ffffff;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 0.813rem;
   letter-spacing: 0;
   text-align: left;
@@ -38,7 +38,7 @@ const ClearButton = styled.button`
   height: 100%;
   border: none;
   color: white;
-  font-style: "Roboto";
+  font-style: 'Roboto';
   text-align: right;
   font-size: 0.813rem;
   font-weight: normal;
