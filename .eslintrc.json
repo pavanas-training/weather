@@ -11,6 +11,6 @@
   },
   "plugins": ["react"],
   "rules": {
-    "quotes": ["error", "double"]
+    "quotes": ["error", "single"]
   }
 }
