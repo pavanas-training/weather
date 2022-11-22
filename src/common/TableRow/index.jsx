@@ -1,22 +1,13 @@
-import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
-import styled from "styled-components";
-const TableRow = ({
-  location,
-  src,
-  temp,
-  weather,
-  likeStatus,
-  setChangeFav,
-  changeFav,
-  data,
-}) => {
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import styled from 'styled-components';
+const TableRow = ({ location, src, temp, weather, likeStatus, setChangeFav, changeFav, data }) => {
   const history = useHistory();
   const [favState, setFavState] = useState(likeStatus);
   const handleFav = (e) => {
     e.stopPropagation();
-    var arr = JSON.parse(localStorage.getItem("Favourite"));
-    var arr2 = JSON.parse(localStorage.getItem("FavLocations"));
+    var arr = JSON.parse(localStorage.getItem('Favourite'));
+    var arr2 = JSON.parse(localStorage.getItem('FavLocations'));
     if (arr2.includes(location)) {
       const idx = arr2.indexOf(location);
       arr2.splice(idx, 1);
@@ -25,30 +16,24 @@ const TableRow = ({
       arr2.push(location);
       arr.push(data);
     }
-    localStorage.setItem("FavLocations", JSON.stringify(arr2));
-    localStorage.setItem("Favourite", JSON.stringify(arr));
-    setFavState(
-      JSON.parse(localStorage.getItem("FavLocations")).includes(location)
-    );
+    localStorage.setItem('FavLocations', JSON.stringify(arr2));
+    localStorage.setItem('Favourite', JSON.stringify(arr));
+    setFavState(JSON.parse(localStorage.getItem('FavLocations')).includes(location));
     setChangeFav(!changeFav);
   };
   return (
     <RowContainer
-      onClick={() =>
-        history.push({ pathname: "/home", state: { place: { location } } })
-      }
+      onClick={() => history.push({ pathname: '/home', state: { place: { location } } })}
     >
       <Location>{location}</Location>
-      <Icon src={src} alt="icon" />
+      <Icon src={src} alt='icon' />
       <Temp>{`${temp}`}</Temp>
-      <Cel>{`${"\u00b0"}c`}</Cel>
+      <Cel>{`${'\u00b0'}c`}</Cel>
       <Weather>{weather}</Weather>
       <Button>
         <Like
           src={
-            favState || !data
-              ? `/assets/icons/icon_liked.svg`
-              : `/assets/icons/icon_not_liked.svg`
+            favState || !data ? `/assets/icons/icon_liked.svg` : `/assets/icons/icon_not_liked.svg`
           }
           onClick={(e) => handleFav(e)}
         ></Like>
@@ -71,7 +56,7 @@ const RowContainer = styled.div`
 `;
 const Location = styled.h1`
   color: #ffffff;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   font-weight: normal;
   letter-spacing: 0;
@@ -107,7 +92,7 @@ const Button = styled.button`
 `;
 const Temp = styled.h1`
   color: #ffffff;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 2rem;
   font-weight: 500;
   letter-spacing: 0;
@@ -118,7 +103,7 @@ const Temp = styled.h1`
 `;
 const Cel = styled.h1`
   color: #ffffff;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.125rem;
   letter-spacing: 0;
   font-weight: 400;
@@ -130,7 +115,7 @@ const Cel = styled.h1`
 `;
 const Weather = styled.h1`
   color: #ffffff;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 100;
   font-size: 1.125rem;
   letter-spacing: 0;

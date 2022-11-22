@@ -1,25 +1,25 @@
-import React, { useEffect, useState } from "react";
-import styled, { createGlobalStyle } from "styled-components";
-import DisplayEmpty from "../../common/DisplayEmpty/index.jsx";
-import Header from "../../common/Header/index.jsx";
-import TableRow from "../../common/TableRow/index.jsx";
-import RemoveButton from "../../common/RemoveButton/index.jsx";
-import AlertBox from "../../common/AlertBox/index.jsx";
+import React, { useEffect, useState } from 'react';
+import styled, { createGlobalStyle } from 'styled-components';
+import DisplayEmpty from '../../common/DisplayEmpty/index.jsx';
+import Header from '../../common/Header/index.jsx';
+import TableRow from '../../common/TableRow/index.jsx';
+import RemoveButton from '../../common/RemoveButton/index.jsx';
+import AlertBox from '../../common/AlertBox/index.jsx';
 
 const RecentSearch = () => {
   const [changeFav, setChangeFav] = useState(true);
   const [alertStatus, setAlertStatus] = useState(false);
-  const recent = JSON.parse(localStorage.getItem("RecentSearch"));
+  const recent = JSON.parse(localStorage.getItem('RecentSearch'));
   useEffect(() => {}, [changeFav]);
   return (
     <>
       <RecentSearchContainer>
-        <div className="overlay" id={alertStatus && "overlay"}></div>
+        <div className='overlay' id={alertStatus && 'overlay'}></div>
         <Header />
         {recent.length !== 0 && (
           <RemoveButton
-            msg="You recently searched for"
-            btn_name="Clear all"
+            msg='You recently searched for'
+            btn_name='Clear all'
             setChangeFav={setChangeFav}
             changeFav={changeFav}
             setAlertStatus={setAlertStatus}
@@ -30,21 +30,15 @@ const RecentSearch = () => {
             return (
               <TableRow
                 key={index}
-                location={`${data.name}, ${
-                  data.sys.country === "IN" ? "India" : data.sys.country
-                }`}
+                location={`${data.name}, ${data.sys.country === 'IN' ? 'India' : data.sys.country}`}
                 temp={Math.trunc(data.main.temp)}
                 weather={
                   data.weather[0].description.charAt(0).toUpperCase() +
                   data.weather[0].description.slice(1)
                 }
                 src={`/assets/icons/${data.weather[0].icon}.svg`}
-                likeStatus={JSON.parse(
-                  localStorage.getItem("FavLocations")
-                ).includes(
-                  `${data.name}, ${
-                    data.sys.country === "IN" ? "India" : data.sys.country
-                  }`
+                likeStatus={JSON.parse(localStorage.getItem('FavLocations')).includes(
+                  `${data.name}, ${data.sys.country === 'IN' ? 'India' : data.sys.country}`
                 )}
                 setChangeFav={setChangeFav}
                 changeFav={changeFav}
@@ -52,11 +46,11 @@ const RecentSearch = () => {
               ></TableRow>
             );
           })}
-        {recent.length === 0 && <DisplayEmpty msg="No Recent Search" />}
+        {recent.length === 0 && <DisplayEmpty msg='No Recent Search' />}
       </RecentSearchContainer>
       {alertStatus && (
         <AlertBox
-          msg="Are you sure want to clear recent searches?"
+          msg='Are you sure want to clear recent searches?'
           setChangeFav={setChangeFav}
           changeFav={changeFav}
           setAlertStatus={setAlertStatus}

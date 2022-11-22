@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 const FooterCard = ({ src, heading, value }) => {
   return (
     <CardContainer>
@@ -37,7 +37,7 @@ const InfoContainer = styled.div`
 
 const Key = styled.h1`
   color: #ffffff;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 0.938rem;
   letter-spacing: 0;
   margin: 0;
@@ -46,7 +46,7 @@ const Key = styled.h1`
 `;
 const Value = styled.h1`
   color: #ffffff;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.375rem;
   font-weight: 500;
   letter-spacing: 0;

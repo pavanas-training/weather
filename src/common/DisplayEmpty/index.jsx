@@ -4,7 +4,7 @@ import icon from '../../assets/icons/icon_nothing.svg';
 const DisplayEmpty = ({ msg }) => {
   return (
     <DisplayEmptyContainer>
-              <StyledNothingIcon src={icon}></StyledNothingIcon>
+      <StyledNothingIcon src={icon}></StyledNothingIcon>
       <StyledMessage>{msg}</StyledMessage>
     </DisplayEmptyContainer>
   );
