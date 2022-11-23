@@ -34,7 +34,7 @@ function App() {
   return (
     <Wrapper>
       <Routes />
-    </Wrapper>
+    </Wrapper
   );
 }
 const Wrapper = styled.div`
