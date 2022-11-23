@@ -1,14 +1,11 @@
 name: Lint test
-on: push
+on: pull_request
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Install ESLint
-      run: npm install eslint
-    - name: Run ESLint
-      run: npm run lint
-
-
-
+      - uses: actions/checkout@v2
+      - name: Install ESLint
+        run: npm install eslint
+      - name: Run ESLint
+        run: npm run lint
