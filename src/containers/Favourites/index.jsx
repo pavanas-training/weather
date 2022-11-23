@@ -50,7 +50,7 @@ const Favourite = () => {
       </FavouriteContainer>
       {alertStatus && (
         <AlertBox
-          msg='Are you sure want to remove all the favourites?'
+          msg="Are you sure want to remove all the favourites?"
           setChangeFav={setChangeFav}
           changeFav={changeFav}
           setAlertStatus={setAlertStatus}
