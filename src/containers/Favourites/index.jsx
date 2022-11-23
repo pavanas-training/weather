@@ -13,7 +13,10 @@ const Favourite = () => {
   return (
     <>
       <FavouriteContainer>
-        <div className='overlay' id={alertStatus && 'overlay'}></div>
+        <div
+          className='overlay'
+          id={alertStatus && 'overlay'}
+        ></div>
         <Header />
         {fav.length !== 0 && (
           <RemoveButton
