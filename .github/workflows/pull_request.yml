@@ -1,0 +1,22 @@
+name: pull-request
+on: 
+  pull_request : 
+     branches : [ develop ] 
+
+jobs: 
+  lint:
+    runs-on : ubuntu-latest
+    steps: 
+    - uses: actions/checkout@v2
+
+    - name: Lint-test
+    - uses: actions/lint
+
+  build:
+    runs-on : ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: build-ability
+      run: npm run build
+   

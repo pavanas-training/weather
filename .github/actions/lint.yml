@@ -1,0 +1,8 @@
+name: Lint test
+jobs:
+  runs-on: ubuntu-latest
+  steps:
+    - name: Install ESLint
+      run: npm install eslint
+    - name: Run ESLint
+      run: npm run lint
