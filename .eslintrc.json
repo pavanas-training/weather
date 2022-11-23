@@ -16,5 +16,11 @@
   "rules": {
     "quotes": ["error", "single", { "allowTemplateLiterals": true }],
     "react/prop-types": 0
+  },
+  "parser": "babel-eslint",
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
