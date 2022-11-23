@@ -12,7 +12,7 @@ export const getData = async (city) => {
       result = res.data;
     })
     .catch((error) => {
-      console.log('City not found',error);
+      console.log('City not found', error);
     });
   return result;
 };
@@ -29,7 +29,7 @@ export const getCurrentLocationData = async () => {
       result = res.data;
     })
     .catch((error) => {
-      console.log('City not found',error);
+      console.log('City not found', error);
     });
   return result;
 };
