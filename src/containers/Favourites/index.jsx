@@ -12,7 +12,7 @@ const Favourite = () => {
   useEffect(() => {}, [changeFav]);
   return (
     <>
-      <FavContainer>
+      <FavouriteContainer>
         <div className='overlay' id={alertStatus && 'overlay'}></div>
         <Header />
         {fav.length !== 0 && (
@@ -47,7 +47,7 @@ const Favourite = () => {
         {JSON.parse(localStorage.getItem('FavLocations')).length === 0 && (
           <DisplayEmpty msg='No Favourites added' />
         )}
-      </FavContainer>
+      </FavouriteContainer>
       {alertStatus && (
         <AlertBox
           msg='Are you sure want to remove all the favourites?'
@@ -66,7 +66,7 @@ const AlertStyle = createGlobalStyle`
   display: block;
 }`;
 
-const FavContainer = styled.div`
+const FavouriteContainer = styled.div`
   background-color: transparent;
   width: 100%;
   height: 100%;
