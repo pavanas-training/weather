@@ -1,14 +1,14 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 const AlertBox = ({ msg, changeFav, setChangeFav, setAlertStatus }) => {
   const handleClickYes = () => {
     const arr = [];
-    if (msg === "Are you sure want to clear recent searches?") {
-      localStorage.setItem("RecentSearch", JSON.stringify(arr));
-      localStorage.setItem("RecentLocations", JSON.stringify(arr));
+    if (msg === 'Are you sure want to clear recent searches?') {
+      localStorage.setItem('RecentSearch', JSON.stringify(arr));
+      localStorage.setItem('RecentLocations', JSON.stringify(arr));
     } else {
-      localStorage.setItem("Favourite", JSON.stringify(arr));
-      localStorage.setItem("FavLocations", JSON.stringify(arr));
+      localStorage.setItem('Favourite', JSON.stringify(arr));
+      localStorage.setItem('FavLocations', JSON.stringify(arr));
     }
     setChangeFav(!changeFav);
     setAlertStatus(false);
@@ -21,10 +21,10 @@ const AlertBox = ({ msg, changeFav, setChangeFav, setAlertStatus }) => {
     <Alert>
       <Message>{msg}</Message>
       <ButtonContainer>
-        <ButtonYesNo onClick={handleClickNo} className="no">
+        <ButtonYesNo onClick={handleClickNo} className='no'>
           NO
         </ButtonYesNo>
-        <ButtonYesNo onClick={handleClickYes} className="yes">
+        <ButtonYesNo onClick={handleClickYes} className='yes'>
           YES
         </ButtonYesNo>
       </ButtonContainer>
@@ -62,7 +62,7 @@ const Alert = styled.div`
 `;
 const Message = styled.h1`
   color: #000000;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 0.938rem;
   letter-spacing: 0;
   text-align: center;
@@ -78,7 +78,7 @@ const ButtonContainer = styled.div`
 `;
 const ButtonYesNo = styled.button`
   color: #000000;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 0.938rem;
   letter-spacing: 0;
   text-align: center;

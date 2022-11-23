@@ -1,26 +1,26 @@
-import logo_web from "../../assets/icons/logo_web.svg";
-import styled from "styled-components";
-import moment from "moment";
-import search_icon from "../../assets/icons/icon_search_white.svg";
-import React, { useState } from "react";
-import { NavLink, useHistory } from "react-router-dom";
+import logo_web from '../../assets/icons/logo_web.svg';
+import styled from 'styled-components';
+import moment from 'moment';
+import search_icon from '../../assets/icons/icon_search_white.svg';
+import React, { useState } from 'react';
+import { NavLink, useHistory } from 'react-router-dom';
 const Header = () => {
   const handleSearch = (location) => {
-    history.push({ pathname: "/home", state: { place: { location } } });
+    history.push({ pathname: '/home', state: { place: { location } } });
   };
   const history = useHistory();
-  const menuItems = ["HOME", "FAVOURITE", "RECENT SEARCH"];
+  const menuItems = ['HOME', 'FAVOURITE', 'RECENT SEARCH'];
   const [city, setCity] = useState();
   return (
     <Wrapper>
       <TopContainer>
-        <Logo src={logo_web} alt="logo"></Logo>
+        <Logo src={logo_web} alt='logo'></Logo>
         <StyledInput
-          placeholder="Search city"
+          placeholder='Search city'
           onChange={(event) => setCity(event.target.value)}
           onKeyDown={(event) => {
             setCity(event.target.value);
-            if (event.key === "Enter") handleSearch(city);
+            if (event.key === 'Enter') handleSearch(city);
           }}
         />
         <SearchButton
@@ -28,25 +28,25 @@ const Header = () => {
             handleSearch(city);
           }}
         >
-          <img alt="icon" src={search_icon}></img>
+          <img alt='icon' src={search_icon}></img>
         </SearchButton>
       </TopContainer>
       <NavbarContainer>
         {menuItems.map((item, index) => {
           return (
             <NavLink
-              to={`/${item.toLowerCase().replace(" ", "-")}`}
-              activeClassName="selected"
+              to={`/${item.toLowerCase().replace(' ', '-')}`}
+              activeClassName='selected'
               id={index}
               key={index}
-              className="header-elements"
+              className='header-elements'
             >
               {item}
             </NavLink>
           );
         })}
-        <StyledDate>{moment().format("ddd, DD MMM YYYY")}</StyledDate>
-        <StyledTime>{moment().format(" h:mm A")}</StyledTime>
+        <StyledDate>{moment().format('ddd, DD MMM YYYY')}</StyledDate>
+        <StyledTime>{moment().format(' h:mm A')}</StyledTime>
       </NavbarContainer>
     </Wrapper>
   );
@@ -75,7 +75,7 @@ const StyledInput = styled.input`
   background-color: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 3px 0px 0px 3px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   outline: none;
   width: 35%;
@@ -86,7 +86,7 @@ const StyledInput = styled.input`
   ::placeholder {
     color: #ffffff;
     opacity: 0.8;
-    font-family: "Roboto", sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: normal;
     padding-left: 2%;
   }
@@ -108,7 +108,7 @@ const NavbarContainer = styled.div`
   margin-left: 5%;
   .header-elements {
     color: #ffffff;
-    font-family: "Roboto", sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 0.938rem;
     text-decoration: none;
     margin: 3% 2% 0% 0%;
@@ -118,7 +118,7 @@ const NavbarContainer = styled.div`
       color: #ffd639;
     }
   }
-  
+
   .selected {
     color: #ffd639;
     border-bottom: 3px solid;
@@ -126,7 +126,7 @@ const NavbarContainer = styled.div`
 `;
 const StyledDate = styled.h1`
   color: #ffffff;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 0.938rem;
   margin: 3% 1% 0% 44%;
   font-weight: normal;
@@ -136,7 +136,7 @@ const StyledDate = styled.h1`
 `;
 const StyledTime = styled.h1`
   color: #ffffff;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 0.938rem;
   margin: 3% auto;
   font-weight: normal;
