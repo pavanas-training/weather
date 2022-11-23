@@ -9,13 +9,18 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Lint-test
-        uses: ./.github/actions/lint
+      - name: Install ESLint
+        run: npm install eslint
+      - name: Run ESLint
+        run: npm run lint
 
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
+      - name: Install react-scripts
+        run: npm install react-scripts
 
       - name: build-ability
         run: npm run build
