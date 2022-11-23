@@ -1,6 +1,6 @@
 name: Lint test
-jobs:
-  runs-on: ubuntu-latest
+runs:
+  using: 'composite'
   steps:
     - name: Install ESLint
       run: npm install eslint
