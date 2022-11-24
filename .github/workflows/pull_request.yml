@@ -1,7 +1,7 @@
 name: pull-request
 on:
   pull_request:
-    branches: [develop]
+    branches: [develop, master, release/**]
 
 jobs:
   lint:
