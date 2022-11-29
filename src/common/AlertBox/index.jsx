@@ -20,14 +20,14 @@ const AlertBox = ({ msg, changeFav, setChangeFav, setAlertStatus }) => {
   return (
     <Alert>
       <Message>{msg}</Message>
-      <ButtonContainer>
+      <BtnContainer>
         <ButtonYesNo onClick={handleClickNo} className='no'>
           NO
         </ButtonYesNo>
         <ButtonYesNo onClick={handleClickYes} className='yes'>
           YES
         </ButtonYesNo>
-      </ButtonContainer>
+      </BtnContainer>
     </Alert>
   );
 };
@@ -70,7 +70,7 @@ const Message = styled.h1`
   margin-bottom: 10%;
   font-weight: normal;
 `;
-const ButtonContainer = styled.div`
+const BtnContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
