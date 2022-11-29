@@ -13,7 +13,7 @@ const Home = ({ location }) => {
   const [favState, setFavState] = useState();
 
   const handleFav = () => {
-    var arr = JSON.parse(localStorage.getItem('Favourite'));
+    var arr = JSON.parse(localStorage.getItem('Favourite');
     var arr2 = JSON.parse(localStorage.getItem('FavLocations'));
     if (arr2.includes(`${data.name}, ${data.sys.country === 'IN' ? 'India' : data.sys.country}`)) {
       const idx = arr2.indexOf(
