@@ -1,9 +1,0 @@
-name: Lint test
-shell: bash
-runs:
-  using: 'composite'
-  steps:
-    - name: Install ESLint
-      run: npm install eslint
-    - name: Run ESLint
-      run: npm run lint
