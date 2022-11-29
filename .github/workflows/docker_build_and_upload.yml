@@ -3,7 +3,7 @@ on:
   pull_request:
     branches: [develop]
 jobs:
-  create and push image:
+  create-and-push-image:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
