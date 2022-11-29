@@ -3,17 +3,20 @@ on:
   pull_request:
     branches: [master]
 jobs:
-  steps:
-    - uses: actions/checkout@v2
-      name: Check out code
+  create-and-push-image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
 
-    - uses: mr-smithers-excellent/docker-build-push@v5.8
-      name: Build & push Docker image
-      with:
-        image: pavanasalvankar/weather
-        tags: v1, latest
-        registry: docker.io
-        dockerfile: Dockerfile
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
+      - uses: mr-smithers-excellent/docker-build-push@v5.8
+        name: Build & push Docker image
+        with:
+          image: pavanasalvankar/weather
+          tags: v1, latest
+          registry: docker.io
+          dockerfile: Dockerfile
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
 
