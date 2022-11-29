@@ -1,6 +1,7 @@
 name: Greetings
 
 on: pull_request
+  branches: [master]
 
 jobs:
   greeting:
@@ -10,4 +11,4 @@ jobs:
     steps:
       - uses: mshick/add-pr-comment@v2
         with:
-          message: 'Hey you raised PR!'
+          message: 'Alert! You are merging into master'
