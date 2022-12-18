@@ -49,7 +49,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
       - uses: mshick/add-pr-comment@v2
-          permissions:
-            pull-requests: write
-          with:
-            message: 'Deployed to url https://dev.weather.com'
+        permissions:
+          pull-requests: write
+        with:
+          message: 'Deployed to url https://dev.weather.com'
