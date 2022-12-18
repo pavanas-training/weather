@@ -1,4 +1,4 @@
-name: pull-request master
+name: dev image build and deployment
 on:
   pull_request:
     branches: [master]
