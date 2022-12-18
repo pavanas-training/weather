@@ -36,7 +36,7 @@ jobs:
         name: Build & push Docker image
         with:
           image: pavanasalvankar/weather
-          tags: uat, latest
+          tags: uat, uat-latest
           registry: docker.io
           dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
