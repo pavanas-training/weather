@@ -1,6 +1,6 @@
-name: pull-request release
+name: release image build and deployment
 on:
-  pull_request:
+  create:
     branches: [release/**]
 
 jobs:
