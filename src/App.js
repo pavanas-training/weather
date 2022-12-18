@@ -3,17 +3,17 @@ import Routes from './routes/index.jsx';
 import styled from 'styled-components';
 import background_image from './assets/images/background.svg';
 function App() {
-  // var arr = [];
-  // localStorage.getItem('RecentLocations');
-  // localStorage.getItem('FavLocations');
-  // localStorage.setItem('RecentLocations', JSON.stringify(arr));
-  // localStorage.setItem('FavLocations', JSON.stringify(arr));
-  // localStorage.getItem('RecentSearch');
-  // localStorage.getItem('Favourite');
-  // localStorage.setItem('RecentSearch', JSON.stringify(arr));
-  // localStorage.setItem('Favourite', JSON.stringify(arr));
-  // localStorage.getItem('Latitude');
-  // localStorage.getItem('Longitude');
+  var arr = [];
+  localStorage.getItem('RecentLocations');
+  localStorage.getItem('FavLocations');
+  localStorage.setItem('RecentLocations', JSON.stringify(arr));
+  localStorage.setItem('FavLocations', JSON.stringify(arr));
+  localStorage.getItem('RecentSearch');
+  localStorage.getItem('Favourite');
+  localStorage.setItem('RecentSearch', JSON.stringify(arr));
+  localStorage.setItem('Favourite', JSON.stringify(arr));
+  localStorage.getItem('Latitude');
+  localStorage.getItem('Longitude');
   var options = {
     enableHighAccuracy: true,
     timeout: 5000,
