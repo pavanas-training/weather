@@ -30,7 +30,7 @@ const Header = () => {
         >
           <img alt='icon' src={search_icon}></img>
         </SearchButton>
-      </TopContainer>
+      </TopContainer
       <NavbarContainer>
         {menuItems.map((item, index) => {
           return (
