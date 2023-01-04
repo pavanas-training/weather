@@ -31,7 +31,7 @@ const Header = () => {
           <img alt='icon' src={search_icon}></img>
         </SearchButton>
       </TopContainer>
-      <NavbarContainer>
+      <NavbarContainer
         {menuItems.map((item, index) => {
           return (
             <NavLink
