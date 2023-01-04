@@ -31,7 +31,7 @@ const Header = () => {
           <img alt='icon' src={search_icon}></img>
         </SearchButton>
       </TopContainer>
-      <NavbarContainer>
+      <NavBarContainer>
         {menuItems.map((item, index) => {
           return (
             <NavLink
@@ -47,7 +47,7 @@ const Header = () => {
         })}
         <StyledDate>{moment().format('ddd, DD MMM YYYY')}</StyledDate>
         <StyledTime>{moment().format(' h:mm A')}</StyledTime>
-      </NavbarContainer>
+      </NavBarContainer>
     </Wrapper>
   );
 };
@@ -98,7 +98,7 @@ const SearchButton = styled.button`
   border-radius: 0px 3px 3px 0px;
   padding-right: 1%;
 `;
-const NavbarContainer = styled.div`
+const NavBarContainer = styled.div`
   width: 95%;
   height: 40%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
