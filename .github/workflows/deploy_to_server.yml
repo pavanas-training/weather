@@ -17,7 +17,7 @@ on:
     
     
 jobs:
-  pull docker image:
+  pull-docker-image:
     runs-on: ubuntu-latest
     steps:
       - name: Docker login
