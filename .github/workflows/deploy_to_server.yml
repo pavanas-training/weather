@@ -17,11 +17,11 @@ on:
     
     
 jobs:
-  pull-and-deploy-docker-image:
+  pull docker image:
     runs-on: ubuntu-latest
     steps:
       - name: Docker login
         run: docker login --username pavanasalvankar --password Pavana123
-      - name: Check login
-        needs: Docker login
+  check login:
+      - needs: Docker login
         run: echo 'Success'
