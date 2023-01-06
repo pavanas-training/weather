@@ -1,0 +1,17 @@
+name: Deploy image to server
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        required: true
+      environment:
+        required: true
+        type: string 
+    
+jobs:
+  pull-and-deploy-docker-image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display inputs
+        run: echo "${{github.event.inputs.tag}} ${{github.evenr.inputs.environment}}"
+         
