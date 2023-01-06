@@ -12,17 +12,6 @@ jobs:
   pull-and-deploy-docker-image:
     runs-on: ubuntu-latest
     steps:
-      - uses: mshick/add-pr-comment@v2
-        with:
-          message: '${{github.event.inputs.tag} ${{ github.event.inputs.environment }}'
-      # - uses: actions/checkout@v2
-      # - name: pull image
-     
-      # - name: Deploy Action
-      # - uses: mshick/add-pr-comment@v2
-      #   with:
-      #     message: 'Successfully Deployed!'
-      #   with:
-      #     dockerImageTag: ${{ github.event.inputs.tag }}
-      #     deployEnvironments: ${{ github.event.inputs.environment }}
+      - name: Display inputs
+        run: echo "${{github.event.inputs.tag}} ${{github.evenr.inputs.environment}}"
          
