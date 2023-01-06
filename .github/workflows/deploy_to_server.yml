@@ -3,15 +3,25 @@ on:
   workflow_dispatch:
     inputs:
       tag:
+        description: Enter the tag
+        type: string
         required: true
       environment:
+        description: Select environment 
+        type: choice
+        options:
+        - PROD
+        - UAT
+        - DEV
         required: true
-        type: string 
+    
     
 jobs:
   pull-and-deploy-docker-image:
     runs-on: ubuntu-latest
     steps:
-      - name: Display inputs
-        run: echo "${{github.event.inputs.tag}} ${{github.evenr.inputs.environment}}"
-         
+      - name: Docker login
+        run: docker login --username pavanasalvankar --password Pavana123
+      - name: Check login
+        needs: Docker login
+        run: echo 'Success'
