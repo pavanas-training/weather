@@ -23,5 +23,6 @@ jobs:
       - name: Docker login
         run: docker login --username pavanasalvankar --password Pavana123
   check login:
-      - needs: Docker login
-        run: echo 'Success'
+      needs: Docker login
+      steps:
+        - run: echo 'Success'
