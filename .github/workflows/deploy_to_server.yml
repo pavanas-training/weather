@@ -24,5 +24,6 @@ jobs:
         run: docker login --username pavanasalvankar --password Pavana123
   check login:
       needs: Docker login
+      runs-on: ubuntu-latest
       steps:
         - run: echo 'Success'
