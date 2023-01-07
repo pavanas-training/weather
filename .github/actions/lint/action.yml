@@ -1,7 +1,6 @@
 name: lint test
 description: Action to perform lint test
 runs:
-  using: composite
   steps:
     - name: Install ESLint
       run: npm install eslint
