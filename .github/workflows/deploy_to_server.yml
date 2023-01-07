@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Docker login
-        run: docker login --email pavanasalvankarbelle1999@gmail.com --password Pavana123
+        run: docker login --username PavanaSalvankar --password Pavana123
   pull-docker-image:
     needs: docker-login
     runs-on: ubuntu-latest
