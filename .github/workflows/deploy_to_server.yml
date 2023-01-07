@@ -26,7 +26,7 @@ jobs:
     needs: docker-login
     runs-on: ubuntu-latest
     steps:
-      - run: docker pull weather:$${github.event.inputs.tag}
+      - run: docker pull weather:${{github.event.inputs.tag}}
   deploy-to-server:
     needs: pull-docker-image
     runs-on: ubuntu-latest
