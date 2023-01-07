@@ -10,20 +10,26 @@ on:
         description: Select environment 
         type: choice
         options:
-        - PROD
-        - UAT
-        - DEV
+        - prod
+        - uat
+        - dev
         required: true
     
     
 jobs:
-  pull-docker-image:
+  docker-login:
     runs-on: ubuntu-latest
     steps:
       - name: Docker login
         run: docker login --username pavanasalvankar --password Pavana123
-  check-login:
-      needs: pull-docker-image
-      runs-on: ubuntu-latest
-      steps:
-        - run: echo 'Success'
+  pull-docker-image:
+    needs: docker-login
+    runs-on: ubuntu-latest
+    steps:
+      - run: docker pull weather:$${github.event.inputs.tag}
+  deploy-to-server:
+    needs: pull-docker-image
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'Deployed successfully'
+      
