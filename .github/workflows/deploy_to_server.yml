@@ -21,9 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Docker login
-        run: docker login --username pavanasalvankar --password Pavana123
-      - name: dispaly
-        run: echo "docker pull pavanasalvankar/weather:${{github.event.inputs.environment}}"
+        run: docker login --username pavanasalvankar --password-stdin.
   pull-docker-image:
     needs: docker-login
     runs-on: ubuntu-latest
