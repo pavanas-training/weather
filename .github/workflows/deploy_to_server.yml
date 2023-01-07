@@ -22,7 +22,7 @@ jobs:
     steps:
       - name: Docker login
         run: docker login --username pavanasalvankar --password Pavana123
-  check login:
+  check-login:
       needs: Docker login
       runs-on: ubuntu-latest
       steps:
