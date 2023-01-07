@@ -12,5 +12,3 @@ runs:
       run: npm install eslint
     - name: Run ESLint
       run: npm run lint
-
-  
