@@ -4,7 +4,7 @@ on:
     inputs:
       tag:
         description: Enter the tag
-        type: string
+        type: choice
         required: true
       environment:
         description: Select environment 
