@@ -4,11 +4,15 @@ on:
     branches: [develop]
 
 jobs:
+  lint1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: lint using action
+        uses: ./.github/actions/lint
   lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
       - name: Install ESLint
         run: npm install eslint
       - name: Run ESLint
