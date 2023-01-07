@@ -8,12 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
-      - name: Install react-scripts
-        run: npm install react-scripts
-
-      - name: build-ability
-        run: npm run build
+      - name: build
+        uses: ./.github/actions/build
 
   docker-build:
     runs-on: ubuntu-latest
