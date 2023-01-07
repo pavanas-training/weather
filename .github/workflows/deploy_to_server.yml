@@ -28,7 +28,7 @@ jobs:
     needs: docker-login
     runs-on: ubuntu-latest
     steps:
-      - run: docker pull pavanasalvankar/weather:${{github.event.inputs.environment}}
+      - run: docker pull docker.io/pavanasalvankar/weather:${{github.event.inputs.environment}}
   deploy-to-server:
     needs: pull-docker-image
     runs-on: ubuntu-latest
