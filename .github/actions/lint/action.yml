@@ -1,11 +1,7 @@
 name: lint test
 description: Action to perform lint test
-
-inputs:
-  branch:
-    description: tells when to run action
-    type: string
 runs:
+  using: composite
   steps:
     - uses: actions/checkout@v2
     - name: Install ESLint
