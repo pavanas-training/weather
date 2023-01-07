@@ -3,7 +3,6 @@ description: Action to perform lint test
 runs:
   using: composite
   steps:
-    - uses: actions/checkout@v2
     - name: Install ESLint
       run: npm install eslint
     - name: Run ESLint
