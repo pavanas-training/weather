@@ -4,6 +4,8 @@ runs:
   using: composite
   steps:
     - name: Install ESLint
+      shell: bash
       run: npm install eslint
     - name: Run ESLint
+      shell: bash
       run: npm run lint
