@@ -4,11 +4,11 @@ on:
     inputs:
       tag:
         description: Enter the tag
-        type: choice
+        type: string
         required: true
       environment:
         description: Select environment 
-        type: string
+        type: choice
         options:
         - prod
         - uat
