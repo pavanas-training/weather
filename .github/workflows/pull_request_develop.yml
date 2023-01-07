@@ -7,6 +7,7 @@ jobs:
   lint1:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: lint using action
         uses: ./.github/actions/lint
   lint:
