@@ -1,4 +1,4 @@
-name: lint and build test
+name: pull-request-dev
 on:
   pull_request:
     branches: [develop]
