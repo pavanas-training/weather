@@ -27,7 +27,7 @@ jobs:
         name: Build & push Docker image
         with:
           image: pavanasalvankar/weather
-          tags: 1.0.1-uat-${{ steps.buildnumberuat.outputs.build_number }}
+          tags: 1.0.1-uat-${{ steps.buildnumberuat.outputs.build_number }}, 1.0.1-uat
           registry: docker.io
           dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
