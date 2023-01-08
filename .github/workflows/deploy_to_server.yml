@@ -23,7 +23,7 @@ jobs:
       - name: Docker login
         run: docker login --username pavanasalvankar --password Pavana123
       - name : docker pull image
-        run: docker pull docker.io/pavanasalvankar/weather:${{github.event.inputs.environment}}
+        run: docker pull docker.io/pavanasalvankar/weather:${{github.event.inputs.tag}}-${{github.event.inputs.environment}}
   deploy-to-server:
     needs: docker-pull
     runs-on: ubuntu-latest

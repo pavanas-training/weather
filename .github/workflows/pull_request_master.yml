@@ -1,4 +1,4 @@
-name: dev image build and deployment
+name: pull-request-master
 on:
   pull_request:
     branches: [master]
@@ -24,12 +24,17 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v2
-
-      - uses: mr-smithers-excellent/docker-build-push@v5.8
-        name: Build & push Docker image
+      - name: Generate build number
+        id: buildnumberdev
+        uses: einaregilsson/build-number@v3 
+        with:
+          token: ${{secrets.github_token}}      
+          prefix: dev
+      - name: Build & push Docker image
+        uses: mr-smithers-excellent/docker-build-push@v5.8
         with:
           image: pavanasalvankar/weather
-          tags: dev, dev-latest
+          tags: 1.0.2-dev-${{ steps.buildnumberdev.outputs.build_number }}, 1.0.2-dev
           registry: docker.io
           dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}

@@ -1,6 +1,6 @@
-name: uat image build and deployment
+name: create-release
 on:
-  create:
+  push:
     branches: [release/**]
 
 jobs:
@@ -17,12 +17,17 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v2
-
+      - name: Generate build number
+        id: buildnumberuat
+        uses: einaregilsson/build-number@v3 
+        with:
+          token: ${{secrets.github_token}}      
+          prefix: uat
       - uses: mr-smithers-excellent/docker-build-push@v5.8
         name: Build & push Docker image
         with:
           image: pavanasalvankar/weather
-          tags: uat, uat-latest
+          tags: 1.0.1-uat-${{ steps.buildnumberuat.outputs.build_number }}, 1.0.1-uat
           registry: docker.io
           dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
