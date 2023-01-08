@@ -22,11 +22,12 @@ jobs:
         uses: einaregilsson/build-number@v3 
         with:
           token: ${{secrets.github_token}}      
+          prefix: uat
       - uses: mr-smithers-excellent/docker-build-push@v5.8
         name: Build & push Docker image
         with:
           image: pavanasalvankar/weather
-          tags: 1.0.1-uat-${{ steps.buildnumberuat.outputs.build_number }}
+          tags: 1.0.1-${{ steps.buildnumberuat.outputs.build_number }}
           registry: docker.io
           dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
