@@ -29,11 +29,11 @@ jobs:
         uses: einaregilsson/build-number@v3 
         with:
           token: ${{secrets.github_token}}      
-      - uses: mr-smithers-excellent/docker-build-push@v5.8
-        name: Build & push Docker image
+      - name: Build & push Docker image
+        uses: mr-smithers-excellent/docker-build-push@v5.8
         with:
           image: pavanasalvankar/weather
-          tags: dev, dev-latest, ${{ steps.buildnumber.outputs.build_number }}-dev
+          tags: 1.0.1-dev+${{ steps.buildnumber.outputs.build_number }}
           registry: docker.io
           dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}

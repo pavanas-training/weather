@@ -17,12 +17,16 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v2
-
+      - name: Generate build number
+        id: buildnumber
+        uses: einaregilsson/build-number@v3 
+        with:
+          token: ${{secrets.github_token}}      
       - uses: mr-smithers-excellent/docker-build-push@v5.8
         name: Build & push Docker image
         with:
           image: pavanasalvankar/weather
-          tags: uat, uat-latest
+          tags: 1.0.1-uat+${{ steps.buildnumber.outputs.build_number }}
           registry: docker.io
           dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
