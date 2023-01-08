@@ -1,4 +1,5 @@
 name: pull-request-master
+on:
   pull_request:
     branches: [master]
 
