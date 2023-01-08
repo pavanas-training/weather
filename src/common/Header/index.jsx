@@ -48,7 +48,7 @@ const Header = () => {
         <StyledDate>{moment().format('ddd, DD MMM YYYY')}</StyledDate>
         <StyledTime>{moment().format(' h:mm A')}</StyledTime>
       </NavBarContainer>
-    </Wrapper>
+    </Wrapper
   );
 };
 const Wrapper = styled.div`
