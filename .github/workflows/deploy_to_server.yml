@@ -1,0 +1,32 @@
+name: Deploy image to server
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Enter the tag
+        type: string
+        required: true
+      environment:
+        description: Select environment 
+        type: choice
+        options:
+        - prod
+        - uat
+        - dev
+        required: true
+    
+    
+jobs:
+  docker-pull:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Docker login
+        run: docker login --username pavanasalvankar --password Pavana123
+      - name : docker pull image
+        run: docker pull docker.io/pavanasalvankar/weather:${{github.event.inputs.environment}}
+  deploy-to-server:
+    needs: docker-pull
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'Deployed successfully'
+      

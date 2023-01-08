@@ -1,0 +1,11 @@
+name: build test
+description: Action to perform build test
+runs:
+  using: composite
+  steps:
+    - name: install react-scripts
+      shell: bash
+      run: npm install react-scripts
+    - name: run build
+      shell: bash
+      run: npm run build
