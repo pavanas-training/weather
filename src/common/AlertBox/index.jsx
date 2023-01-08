@@ -18,7 +18,7 @@ const AlertBox = ({ msg, changeFav, setChangeFav, setAlertStatus }) => {
     setAlertStatus(false);
   };
   return (
-    <Alert>
+    <Alert
       <Message>{msg}</Message>
       <BtnContainer>
         <ButtonYesNo
