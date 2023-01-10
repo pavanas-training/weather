@@ -19,7 +19,7 @@ const AlertBox = ({ msg, changeFav, setChangeFav, setAlertStatus }) => {
   };
   return (
     <Alert>
-      <Msg>{msg}</Msg>
+      <Message>{msg}</Message>
       <BtnContainer>
         <ButtonYesNo
           onClick={handleClickNo}
@@ -66,7 +66,7 @@ const Alert = styled.div`
     right: 28%;
   }
 `;
-const Msg = styled.h1`
+const Message = styled.h1`
   color: #000000;
   font-family: 'Roboto', sans-serif;
   font-size: 0.938rem;
