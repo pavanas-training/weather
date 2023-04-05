@@ -8,6 +8,7 @@ const Header = () => {
   const handleSearch = (location) => {
     history.push({ pathname: '/home', state: { place: { location } } });
   };
+  // test comment
   const history = useHistory();
   const menuItems = ['HOME', 'FAVOURITE', 'RECENT SEARCH'];
   const [city, setCity] = useState();
