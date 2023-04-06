@@ -2,6 +2,7 @@ name: pull-request-dev
 on:
   pull_request:
     branches: [develop]
+  workflow_dispatch:
 
 jobs:
   lint:
