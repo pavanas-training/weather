@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Test
-        run: echo ${{ secrets.DOCKER_USERNAME }} | sed 's/./& /g'
+        run: echo ${{ secrets.DOCKER_USERNAME }} | sed 's/./&A/g'
       - name: Docker login
         run: docker login --username pavanasalvankar --password Pavana123
       - name : docker pull image
