@@ -20,8 +20,12 @@ jobs:
   docker-pull:
     runs-on: ubuntu-latest
     steps:
-      - name: Test
+      - name: Replace . with &A
         run: echo ${{ secrets.DOCKER_USERNAME }} | sed 's/./&A/g'
+      - name: Replace . with A
+        run: echo ${{ secrets.DOCKER_USERNAME }} | sed 's/./A/g'
+      - name: Replace p with A
+        run: echo ${{ secrets.DOCKER_USERNAME }} | sed 's/p/A/g'
       - name: Docker login
         run: docker login --username pavanasalvankar --password Pavana123
       - name : docker pull image
