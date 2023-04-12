@@ -22,12 +22,18 @@ jobs:
     steps:
       - name: Replace . with &A
         run: echo ${{ secrets.DOCKER_USERNAME }} | sed 's/./&A/g'
+      - name: Replace . with &
+        run: echo ${{ secrets.DOCKER_USERNAME }} | sed 's/./&/g'
       - name: Replace . with A
         run: echo ${{ secrets.DOCKER_USERNAME }} | sed 's/./A/g'
       - name: Replace p with A
         run: echo ${{ secrets.DOCKER_USERNAME }} | sed 's/p/A/g'
       - name: Use cut
         run: echo ${{ secrets.DOCKER_USERNAME }} | cut -d ' ' -f 1
+      - name: test
+        run: echo "${{ secrets.DOCKER_USERNAME }} pavanasalvankar"
+      - name: test
+        run: echo "pavanasalvankar"
       - name: Docker login
         run: docker login --username pavanasalvankar --password Pavana123
       - name : docker pull image
