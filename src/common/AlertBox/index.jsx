@@ -10,6 +10,8 @@ const AlertBox = ({ msg, changeFav, setChangeFav, setAlertStatus }) => {
       localStorage.setItem('Favourite', JSON.stringify(arr));
       localStorage.setItem('FavLocations', JSON.stringify(arr));
     }
+    
+    
     setChangeFav(!changeFav);
     setAlertStatus(false);
   };
