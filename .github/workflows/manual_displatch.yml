@@ -1,0 +1,36 @@
+name: Manual build and deploy
+on:
+  workflow_dispatch:
+    inputs:
+      build_type:
+        description: Select build type 
+        type: choice
+        options:
+        - prod
+        - uat
+        - dev
+        required: true
+    
+    
+jobs:
+  dispatch-workflow :
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy dev
+        if: ${{ inputs.build_type == 'dev' }}
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: "pull-request-dev"
+      - name: Deploy uat
+        if: ${{ inputs.build_type == 'uat' }}
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: "pull-request-dev"
+      - name: Deploy prod
+        if: ${{ inputs.build_type == 'prod' }}
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: "pull-request-dev"
+     
+    
+      
