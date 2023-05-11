@@ -1,7 +1,7 @@
 name: pull-request-dev
 on:
   pull_request:
-    branches: [develop]
+    branches: [develop, TNT-sport]
   workflow_dispatch:
 
 jobs:
