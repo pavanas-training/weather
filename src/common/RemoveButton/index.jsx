@@ -5,14 +5,14 @@ const RemoveButton = ({ msg, setAlertStatus, btn_name }) => {
     setAlertStatus(true);
   };
   return (
-    <Container>
+    <MainContainer>
       <CountDisplay>{msg}</CountDisplay>
       <ClearButton onClick={handleClear}>{btn_name}</ClearButton>
-    </Container>
+    </MainContainer>
   );
 };
 export default RemoveButton;
-const Container = styled.div`
+const MainContainer = styled.div`
   width: 94%;
   height: 5%;
   margin: 0% 0% 0% 5%;
