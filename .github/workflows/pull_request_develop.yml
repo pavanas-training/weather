@@ -14,7 +14,7 @@ jobs:
         id: out
         run: echo fullname=$(node --version)
       - name: Print
-        run: echo ${{ steps.out.outputs.fullname }}
+        run: echo "${{ steps.out.outputs.fullname }}"
       - name: lint 
         uses: ./.github/actions/lint
 
