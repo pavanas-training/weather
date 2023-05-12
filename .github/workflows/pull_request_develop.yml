@@ -2,7 +2,9 @@ name: pull-request-dev
 on:
   pull_request:
     branches: [develop]
-
+env:
+  NAME: "Pavana"
+  SURNAME: "Salvankar"
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -10,9 +12,9 @@ jobs:
       - uses: actions/checkout@v2
       - name: set-output
         id: out
-        run: echo arn=abc >> GITHUB_OUTPUT
+        run: echo fullname=$(node --version) >> $GITHUB_OUTPUT
       - name: Print
-        run: echo ${{ steps.out.outputs.arn }}
+        run: echo ${{ steps.out.outputs.fullname }}
       - name: lint 
         uses: ./.github/actions/lint
 
