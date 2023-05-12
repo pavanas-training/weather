@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: set-output
         id: out
-        run: echo arn=abc >> GITHUB_OUTPUT
+        run: echo "arn=abc" >> GITHUB_OUTPUT
       - name: Print
         run: echo ${{ steps.out.outputs.arn }}
       - name: lint 
