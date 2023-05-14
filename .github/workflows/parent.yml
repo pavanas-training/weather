@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3  
       - name: build-docker
-        uses: ./.github/workflows/private-build-and-push-docker-image.yml    
+        uses: ./.github/workflows/private-reusable.yml    
       - name: Update workflow summary
         run: |
           echo "${{ needs.build-docker.outputs.DockerTag }}"
