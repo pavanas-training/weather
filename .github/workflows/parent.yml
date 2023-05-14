@@ -16,8 +16,9 @@ jobs:
       DEPLOY_ENVIRONMENT: dev
 
     steps:
-      - uses: actions/checkout@v3          
-      
+      - uses: actions/checkout@v3  
+      - name: build-docker
+        uses: ./.github/workflows/private-build-and-push-docker-image.yml    
       - name: Update workflow summary
         run: |
           echo "${{ needs.build-docker.outputs.DockerTag }}"
