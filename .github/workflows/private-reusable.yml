@@ -1,1 +1,17 @@
+name: build-and-push-docker-image
+# Action to build and push the docker image to JFROG
+on: workflow_call
+env:
+  # https://github.com/actions/runner/issues/409
+  JF_DOCKER_REGISTRY_URL: ${{ github.event_name == 'pull_request' && 'discovery-luna-dplusin-web-docker-snapshots.jfrog.io' || 'discovery-luna-dplusin-web-docker-releases.jfrog.io' }}
+  DOCKER_IMAGE: ${{ github.event_name == 'pull_request' &&  'pull-request/dni-dplusin-web' || 'dni-dplusin-web' }}
+jobs:
+  build-docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
 
+      - name: Set Docker Image Tag as Output
+        id: SetDockerTag
+        run: |
+          echo "DockerTag=Pav" >> $GITHUB_OUTPUT
