@@ -1,1 +1,23 @@
 
+name: Build and Deploy to DiscoCloud
+on:
+  push:
+    branches:
+      - 'develop' # We do not have this yet.
+      - 'master'
+
+jobs:
+  deploy-to-dev:
+    runs-on: ubuntu-latest
+    environment: 
+      name: dev
+      url: https://dev.discoveryplus.in
+    env:
+      DEPLOY_ENVIRONMENT: dev
+
+    steps:
+      - uses: actions/checkout@v3          
+      
+      - name: Update workflow summary
+        run: |
+          echo "${{ needs.build-docker.outputs.DockerTag }}"
