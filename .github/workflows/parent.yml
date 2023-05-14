@@ -15,7 +15,6 @@ jobs:
     needs: build-docker
     steps:
       - uses: actions/checkout@v3
-      - name: build-docker
       - name: Update workflow summary
         run: |
           echo "${{ needs.build-docker.outputs.DockerTag }}"
