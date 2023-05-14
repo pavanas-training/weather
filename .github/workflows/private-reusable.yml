@@ -15,7 +15,7 @@ jobs:
   build-docker:
     runs-on: ubuntu-latest
     outputs:
-     DockerTag: ${{ steps.SetDockerTag.outputs.DockerTag }}
+      DockerTag: ${{ steps.SetDockerTag.outputs.DockerTag }}
     steps:
       - uses: actions/checkout@v3
       - name: Set Docker Image Tag as Output
