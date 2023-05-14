@@ -7,7 +7,7 @@ on:
       - 'master'
 
 jobs:
-  deploy-to-dev:
+  build-docker:
     runs-on: ubuntu-latest
     environment: 
       name: dev
