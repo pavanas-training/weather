@@ -18,3 +18,8 @@ jobs:
       - name: Update workflow summary
         run: |
           echo "${{ needs.build-docker.outputs.DockerTag }}"
+            - name: Invoke DiscoCloud deploy workflow
+      - uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: "Greetings"
+          inputs: '{ "dockerImageTag": "${{ needs.build-docker.outputs.DockerTag }}" }'
