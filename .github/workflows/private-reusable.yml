@@ -3,15 +3,11 @@ name: build-and-push-docker-image
 
 on: 
   workflow_call:
-    outputs:
-      DockerTag:
-        description: "Docker Image Tag"
-        value: ${{ jobs.build-docker.outputs.DockerTag }}
+  
 jobs:
   build-docker:
     runs-on: ubuntu-latest
-    outputs:
-      DockerTag: ${{ steps.SetDockerTag.outputs.DockerTag }}
+    
     steps:
       - uses: actions/checkout@v3
       - name: Set Docker Image Tag as Output
