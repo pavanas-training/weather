@@ -4,7 +4,10 @@ on:
   pull_request:
     branches: master
   workflow_dispatch:
-
+    inputs:
+      dockerImageTag:
+        description: "Docker Image Tag"
+        required: true
 jobs:
   greeting:
     runs-on: ubuntu-latest
