@@ -5,6 +5,7 @@ on:
   workflow_call:
     outputs:
       DockerTag:
+        description: "Docker Image Tag"
         value: ${{ jobs.build-docker.outputs.DockerTag }}
 jobs:
   build-docker:
