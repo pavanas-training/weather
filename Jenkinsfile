@@ -1,11 +1,13 @@
 pipeline {
-    agent: any
+    agent any
     triggers {
         pollSCM '* * * * *'
     }
     stages{
         stage('Lint') {
-            sh 'npm run lint'
+            steps{
+                sh 'npm run lint'
+            }
         }
     }
 }
