@@ -1,7 +1,7 @@
 pipeline {
-    docker {
-        image 'node:lts-bullseye-slim' 
-        args '-p 3000:3000' 
+    agent any
+    tools{
+        nodejs '18.0.0'
     }
     triggers {
         pollSCM '* * * * *'
@@ -9,7 +9,13 @@ pipeline {
     stages{
         stage('Lint') {
             steps{
+                sh 'npm install'
                 sh 'npm run lint'
+            }
+        }
+        stage('Build') {
+            steps{
+                sh 'npm run build'
             }
         }
     }
