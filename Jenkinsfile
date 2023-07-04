@@ -1,10 +1,10 @@
 pipeline {
     agent any
     tools{
-        nodejs '18.0.0'
+        nodejs '16.19.0'
     }
     triggers {
-        pollSCM '* * * * *'
+        pollSCM '*/15 * * * *'
     }
     stages{
         stage('Lint') {
