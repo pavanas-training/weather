@@ -1,3 +1,4 @@
+@Library("shared-library") _
 pipeline {
     agent any
     tools{
@@ -16,6 +17,11 @@ pipeline {
         stage('Build') {
             steps{
                 sh 'npm run build'
+            }
+        }
+        stage('Conclusion') {
+            steps{
+                print()
             }
         }
     }
