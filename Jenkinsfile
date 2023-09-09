@@ -27,7 +27,7 @@ pipeline {
                {
                sh 'ls'
                }
-               printSuccess()
+               echo "version: ${printSuccess()}"
             }
         }
     }
