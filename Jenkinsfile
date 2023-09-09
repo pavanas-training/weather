@@ -5,7 +5,7 @@ pipeline {
         nodejs '16.19.0'
     }
     triggers {
-        pollSCM '*/15 * * * *'
+        pollSCM '*/5 * * * *'
     }
     stages{
         stage('Lint') {
