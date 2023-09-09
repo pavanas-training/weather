@@ -27,6 +27,7 @@ pipeline {
                {
                sh 'ls'
                }
+               printSuccess()
             }
         }
     }
