@@ -21,7 +21,9 @@ pipeline {
         stage('Conclusion') {
             steps{
                dir('build')
+               {
                sh 'ls'
+               }
             }
         }
     }
