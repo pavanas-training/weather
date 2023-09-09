@@ -20,7 +20,8 @@ pipeline {
         }
         stage('Conclusion') {
             steps{
-                printSuccess()
+               dir('build')
+               sh 'ls'
             }
         }
     }
