@@ -20,6 +20,9 @@ pipeline {
         }
         stage('Conclusion') {
             steps{
+               sh 'ls'
+               zip(zipFile: 'buildfile.zip', dir:'build', overwrite : true)
+               sh 'ls'
                dir('build')
                {
                sh 'ls'
