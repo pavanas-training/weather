@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Conclusion') {
             steps{
-                print()
+                printSuccess()
             }
         }
     }
