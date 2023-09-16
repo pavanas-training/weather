@@ -16,6 +16,15 @@ pipeline {
         stage('Build') {
             steps{
                 sh 'npm run build'
+                publishHTML (target: [
+                  allowMissing: false,
+                  alwaysLinkToLastBuild: false,
+                  keepAll: true,
+                  reportDir: 'coverage',
+                  reportFiles: 'index.html',
+                  reportName: "Coverage Report"
+    ])
+
             }
         }
         stage('Conclusion') {
