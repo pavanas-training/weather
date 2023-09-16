@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1694846992614" clover="3.2.0">
+  <project timestamp="1694846992614" name="All files">
+    <metrics statements="53" coveredstatements="30" conditionals="13" coveredconditionals="6" methods="28" coveredmethods="10" elements="94" coveredelements="46" complexity="0" loc="53" ncloc="53" packages="12" files="12" classes="12"/>
+    <package name="src">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="App.tsx" path="/Volumes/Development/Jenkins-Initiative-robosoft/devops-sandbox/src/App.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.atoms.Button">
+      <metrics statements="2" coveredstatements="1" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="index.tsx" path="/Volumes/Development/Jenkins-Initiative-robosoft/devops-sandbox/src/components/atoms/Button/index.tsx">
+        <metrics statements="2" coveredstatements="1" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="11" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="12" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.atoms.Heading">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="index.tsx" path="/Volumes/Development/Jenkins-Initiative-robosoft/devops-sandbox/src/components/atoms/Heading/index.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.atoms.NavLink">
+      <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <file name="index.tsx" path="/Volumes/Development/Jenkins-Initiative-robosoft/devops-sandbox/src/components/atoms/NavLink/index.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.atoms.Subtitle">
+      <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="index.tsx" path="/Volumes/Development/Jenkins-Initiative-robosoft/devops-sandbox/src/components/atoms/Subtitle/index.tsx">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.atoms.Title">
+      <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="index.tsx" path="/Volumes/Development/Jenkins-Initiative-robosoft/devops-sandbox/src/components/atoms/Title/index.tsx">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.molecules.ListItem">
+      <metrics statements="9" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="0"/>
+      <file name="index.tsx" path="/Volumes/Development/Jenkins-Initiative-robosoft/devops-sandbox/src/components/molecules/ListItem/index.tsx">
+        <metrics statements="9" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="30" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.molecules.NavBar">
+      <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <file name="index.tsx" path="/Volumes/Development/Jenkins-Initiative-robosoft/devops-sandbox/src/components/molecules/NavBar/index.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="21" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.templates.NewsTemplate">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="index.tsx" path="/Volumes/Development/Jenkins-Initiative-robosoft/devops-sandbox/src/components/templates/NewsTemplate/index.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.constants">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.ts" path="/Volumes/Development/Jenkins-Initiative-robosoft/devops-sandbox/src/constants/index.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.pages.Home">
+      <metrics statements="14" coveredstatements="8" conditionals="6" coveredconditionals="2" methods="7" coveredmethods="2"/>
+      <file name="index.tsx" path="/Volumes/Development/Jenkins-Initiative-robosoft/devops-sandbox/src/pages/Home/index.tsx">
+        <metrics statements="14" coveredstatements="8" conditionals="6" coveredconditionals="2" methods="7" coveredmethods="2"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="33" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.services">
+      <metrics statements="12" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="2"/>
+      <file name="hackerNews.service.ts" path="/Volumes/Development/Jenkins-Initiative-robosoft/devops-sandbox/src/services/hackerNews.service.ts">
+        <metrics statements="12" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="2"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
