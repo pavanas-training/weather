@@ -1,42 +1,41 @@
-@Library("shared-library") _
 pipeline {
-    agent any
-    tools{
-        nodejs '16.19.0'
-    }
-    triggers {
-        pollSCM '*/5 * * * *'
-    }
-    stages{
-        stage('Lint') {
-            steps{
-                sh 'npm install'
-            }
-        }
-        stage('Build') {
-            steps{
-                sh 'npm run build'
-                publishHTML (target: [
-                  allowMissing: false,
-                  alwaysLinkToLastBuild: false,
-                  keepAll: true,
-                  reportDir: 'coverage',
-                  reportFiles: 'index.html',
-                  reportName: "Coverage Report"
-    ])
+    agent none
 
-            }
-        }
-        stage('Conclusion') {
-            steps{
-               sh 'ls'
-               zip(zipFile: 'buildfile.zip', dir:'build', overwrite : true)
-               sh 'ls'
-               dir('build')
-               {
-               sh 'ls'
-               }
-               echo "version: ${printSuccess()}"
+    stages {
+        stage("Build & Test") {
+            matrix {
+                agent {
+                    dockerfile {
+                        label "docker"
+
+                        additionalBuildArgs """
+                            --build-arg JAVA_VERSION=$JAVA \
+                            --build-arg MAVEN_VERSION=$MAVEN \
+                            --build-arg USER_UID=\$(id -u) \
+                            -t mymaven:${MAVEN}-jdk-${JAVA}
+                        """.stripIndent().trim()
+
+                        args "-v /tmp/maven:/home/jenkins/.m2"
+                    }
+                }
+                axes {
+                    axis {
+                        name "JAVA"
+                        values "11.0.7-amzn", "8.0.252-open", "15.ea.26-open"
+                    }
+                    axis {
+                        name "MAVEN"
+                        values "3.6.3"
+                    }
+                }
+                stages {
+                    stage("Build") {
+                        steps {
+                            sh "mvn -version"
+                            sh "java -version"
+                        }
+                    }
+                }
             }
         }
     }
