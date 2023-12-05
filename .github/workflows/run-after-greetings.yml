@@ -12,4 +12,4 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Print URL
-        run: echo "Greetings printed...."
+        run: echo "Greetings printed....."
