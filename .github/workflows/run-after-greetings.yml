@@ -9,6 +9,7 @@ jobs:
   on-success:
     name: success
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Print URL
         run: echo "Greetings printed...."
