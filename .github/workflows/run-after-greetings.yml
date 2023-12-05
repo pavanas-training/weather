@@ -1,7 +1,7 @@
 name: After greetngs
 on:
   workflow_run:
-    workflows: [Greetings]
+    workflows: [pull-request-master]
     types:
       - completed
 
