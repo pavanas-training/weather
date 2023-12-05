@@ -18,6 +18,6 @@ jobs:
         with:
           message: 'Alert! You are merging into master!'
       - name: Set preview build URL as test URL
-        run: echo URL = https://prod-pr-${{ github.event.number }}-dev.dplus.preview.discoveryplus.com >> $GITHUB_ENV
+        run: echo "URL = https://prod-pr-${{ github.event.number }}-dev.dplus.preview.discoveryplus.com" >> $GITHUB_ENV
       - name: print env
         run: env
