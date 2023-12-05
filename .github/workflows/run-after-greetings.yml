@@ -1,14 +1,15 @@
 name: After greetngs
 on:
   workflow_run:
-    workflows: [Greetings]
+    workflows: [pull-request-master]
     types:
       - completed
 
 jobs:
-  run-automation-tests:
-    name: Run automation blaze tests
+  on-success:
+    name: success
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Print URL
         run: echo "Greetings printed...."
