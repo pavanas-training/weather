@@ -6,8 +6,8 @@ on:
       - completed
 
 jobs:
-  run-automation-tests:
-    name: Run automation blaze tests
+  on-success:
+    name: success
     runs-on: ubuntu-latest
     steps:
       - name: Print URL
